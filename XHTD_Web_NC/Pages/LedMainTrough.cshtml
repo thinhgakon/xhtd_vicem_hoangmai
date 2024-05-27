@@ -1,0 +1,159 @@
+﻿@page
+@model LedMainTroughModel
+@{
+    ViewData["Title"] = "Xuất hàng tự động";
+}
+<style>
+    .blink_me {
+        animation: flash 3s linear infinite;
+    }
+
+    .vehicle {
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    .status {
+        text-align: right;
+        padding-right: 50px;
+    }
+
+    @@-webkit-keyframes flash {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: .1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @@keyframes flash {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: .1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .td-style-left {
+    }
+
+    .container-fluid {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .blinking {
+        animation: blinkingText 2.5s infinite;
+    }
+
+    @@keyframes blinkingText {
+        0% {
+            color: #ff0a0a;
+        }
+
+        49% {
+            color: #ff0a0a;
+        }
+
+        60% {
+            color: transparent;
+        }
+
+        99% {
+            color: transparent;
+        }
+
+        100% {
+            color: #000;
+        }
+    }
+</style>
+@if (Model.Orders.Count < 1)
+{
+    <table style="width:100%!important; max-width:100%!important; margin-top:100px;">
+        <tr>
+            <td style="text-align:center;">
+                <img src="~/images/logo.png" />
+            </td>
+        </tr>
+    </table>
+
+    <table style="width:100%!important; max-width:100%!important; margin-top:30px;">
+        <tr>
+            <td style="        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        color: #fff;
+        font-weight: 700;">
+                HỆ THỐNG
+                <br />
+                XUẤT HÀNG TỰ ĐỘNG
+            </td>
+        </tr>
+    </table>
+}
+else
+{
+    <table style="width: 100%; align-items: center; margin: auto; margin-top: 0px;">
+        <thead>
+            <tr style="        padding: 0px !important;
+        background-color: #f9f9fa !important;
+        font-size: 50px;
+        text-align: center;
+        vertical-align: middle;
+        color: #0000ff;
+        font-weight: 700;
+        border-bottom: solid 2px #fff;">
+                <th style="        text-align: center;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        border-right: solid 2px #fff;" scope="col">BIỂN SỐ XE</th>
+                <th style="text-align: right;padding-right: 10px !important;" scope="col">TRẠNG THÁI</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr style=" padding-top: 50px; font-size: 50px; text-align: justify; vertical-align: middle; color: white; font-weight: 700;">
+
+                    @if (order.Step == 5)
+                    {
+                        <td class="" style="width: 350px;border-bottom: solid 2px #fff;color: #ff0a0a;background-color: #ffd800;text-align: center !important;border-right: solid 2px #fff;">
+                            @order.Vehicle
+                        </td>
+                        <td class="blinking" style="    text-align: right;color: #ff0a0a;background-color: #ffd800;border-bottom: solid 2px #fff;padding-right: 10px !important;">
+                            ĐANG LẤY HÀNG
+                        </td>
+                        ;
+                    }
+                    else
+                    {
+                        <td style="width: 350px;color: #fff;text-align: center;border-right: solid 2px #fff;border-bottom: solid 2px #fff;">
+                            @order.Vehicle
+                        </td>
+                        <td style="text-align: right;border-bottom: solid 2px #fff;color: #fff;padding-right: 10px !important;">
+                            CHỜ LẤY HÀNG
+                        </td>
+                        ;
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+}

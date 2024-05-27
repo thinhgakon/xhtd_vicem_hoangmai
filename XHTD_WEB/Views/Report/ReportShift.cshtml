@@ -1,0 +1,148 @@
+﻿@using HMXHTD.Data.DataEntity;
+@model List<tblDistributor>
+@{
+    ViewBag.Title = "Báo cáo theo ca";
+    var reportShifts = (XHTD_WEB.Controllers.ReportShift)ViewBag.ReportShifts;
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    body {
+        background-color: white !important;
+    }
+
+    .vehicle-container {
+        display: flex;
+    }
+</style>
+<style>
+    table, th, td {
+        border: 1px solid #0d6efd;
+        border-collapse: collapse;
+    }
+
+    .sub-th {
+        padding-left: 20px !important;
+    }
+
+</style>
+
+
+<div class="card-container row">
+
+    <form action="/Report/ReportShift" method="get" id="form_filter" style="">
+        <div class="row" style="display:flex">
+            <div class="form-group col-md-8" style="display:flex; margin-bottom: 5px;padding-right: 0px;">
+                <select class="form-control form-select form-select" id="trang_thai" name="Kip" style="border-color: crimson;">
+
+                    <option value="1">Kíp 1</option>
+                    <option value="2">Kíp 2</option>
+                    <option value="3">Kíp 3</option>
+
+                </select>
+                <br />
+
+            </div>
+            <div class="col-md-4" style="text-align: right;">
+                <span class="input-group-btn" style="text-align: right;">
+                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                </span>
+            </div>
+
+        </div>
+    </form>
+    <div class="col-12">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>XM</th>
+                    <td>@reportShifts.TotalShift /  @reportShifts.Total</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Maxpro</th>
+                    <td>@reportShifts.Maxpro</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-PCB30</th>
+                    <td>@reportShifts.PCB30 (BS: @reportShifts.PCB30_BS)</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-PCB40</th>
+                    <td>@reportShifts.PCB40 (BS: @reportShifts.PCB40_BS)</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Block</th>
+                    <td>@reportShifts.Block_XM</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-C595</th>
+                    <td>@reportShifts.C595</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-C150</th>
+                    <td>@reportShifts.C150</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Rời C150</th>
+                    <td>@reportShifts.R_C150</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Jumbo</th>
+                    <td>@reportShifts.Jumbo</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Rời CN</th>
+                    <td>@reportShifts.R_CN</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Rời DD</th>
+                    <td>@reportShifts.R_DD</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Rời Loại I(PC)</th>
+                    <td>@reportShifts.R_I</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Rời SULFAT</th>
+                    <td>@reportShifts.R_SULFAT</td>
+                </tr>
+                <tr>
+                    <th class="sub-th">-Rời Loại II</th>
+                    <td>@reportShifts.R_II</td>
+                </tr>
+                <tr>
+                    <th>Clinker</th>
+                    <td>@reportShifts.Clinker</td>
+                </tr>
+                <tr>
+                    <th>Tontrong</th>
+                    <td>@reportShifts.Tontrong</td>
+                </tr>
+                <tr>
+                    <th>Tonngoai</th>
+                    <td>@reportShifts.Tonngoai</td>
+                </tr>
+                <tr>
+                    <th>TonDS</th>
+                    <td>-không xác định-</td>
+                </tr>
+                <tr>
+                    <th>Tonxroi</th>
+                    <td>@reportShifts.Tonxiroi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+
+</div>
+
+<script>
+     $(document).ready(function () {
+        $('#trang_thai option')
+            .removeAttr('selected')
+            .filter('[value="@ViewBag.Kip"]')
+            .attr('selected', true);
+
+
+    });
+</script>

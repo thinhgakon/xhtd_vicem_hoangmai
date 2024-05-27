@@ -1,0 +1,222 @@
+﻿
+@using XHTD_WEB.Models;
+@model List<tblStoreOrderOperatingExtension>
+@{
+    ViewBag.Title = "Step Progress";
+}
+<style>
+    body {
+        background-color: white !important;
+    }
+
+    .container {
+        padding: unset;
+        width: unset;
+        margin: 0px;
+        padding-top: 30px;
+        max-width: fit-content;
+    }
+
+    .progressbar {
+        counter-reset: step;
+    }
+
+        .progressbar li {
+            list-style-type: none;
+            width: 11%;
+            float: left;
+            font-size: 14px;
+            position: relative;
+            text-align: center;
+            color: #444972;
+        }
+
+            .progressbar li:before {
+                width: 30px;
+                height: 30px;
+                content: counter(step);
+                counter-increment: step;
+                line-height: 25px;
+                border: 3px solid #444972;
+                display: block;
+                text-align: center;
+                margin: 0 auto 10px auto;
+                border-radius: 50%;
+                background-color: white;
+            }
+
+            .progressbar li:after {
+                width: 100%;
+                height: 3px;
+                content: '';
+                position: absolute;
+                background-color: #444972;
+                top: 15px;
+                left: -50%;
+                z-index: -1;
+            }
+
+    #last-child:after {
+        width: 100%;
+        height: 3px;
+        content: '';
+        position: absolute;
+        background-color: #444972;
+        top: 15px;
+        left: -50%;
+        z-index: -1;
+    }
+
+    #last-child:before {
+        display: none;
+    }
+
+    .progressbar li:first-child:after {
+        /*content: none;*/
+    }
+
+    #circle {
+        font-size: 24px;
+        position: absolute;
+        left: 7%;
+        top: 16.29%;
+        color: #444972;
+    }
+    .order-container {
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .vehilce {
+        color: #f38600;
+        font-size: 15px;
+        font-weight: 900;
+        width: 100px;
+    }
+    .confirmed {
+        color: green;
+    }
+    .progressbar li.confirmed:before {
+        border: 3px solid green !important;
+        background-color: green;
+        color: white;
+    }
+    .progressbar li.confirmed:after {
+        background-color:green !important;
+    }
+    .step-container {
+        width: 100%;
+        margin-top: -5px;
+        margin-left: 50px;
+    }
+    .deliverycode {
+        color: #d49c9c;
+        font-weight: 600;
+    }
+    .summary {
+        text-align: center;
+        margin-bottom: 15px;
+        color: chocolate;
+        font-weight: 900;
+    }
+    .tooltip-vehicle {
+        position: relative;
+        display: inline-block;
+    }
+
+        .tooltip-vehicle .tooltip-vehicle-details {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            bottom: 0%;
+            bottom: 50%;
+            left: 100%;
+        }
+
+        .tooltip-vehicle:hover .tooltip-vehicle-details {
+            visibility: visible;
+        }
+    .log-order-container{
+        padding: 15px;
+    }
+</style>
+
+<div class="container">
+    <div class="summary">
+        Total @Model.Count order
+    </div>
+    @foreach (var order in Model)
+    {
+        <div class="order-container">
+            <div class="vehilce tooltip-vehicle">
+                @order.Vehicle
+                <span class="deliverycode"><a href="/Steps/OrderDetails?deliveryCode=@order.DeliveryCode" target="_blank">@order.DeliveryCode</a></span>
+                <span class="deliverycode">Bước: @order.Step</span>
+                <span class="tooltip-vehicle-details">@(order.DriverAccept?.ToString("hh:mm tt"))  @order.DriverUserName <br />@order.TypeProduct - @order.SumNumber </span>
+            </div>
+            <div class="step-container">
+                <ul class="progressbar">
+                    <li class="@(order.Confirm1 > 0 ? "confirmed" : "") tooltip-vehicle">
+                        @(order.TimeConfirm1?.ToString("hh:mm tt"))
+                        <br />
+                        @if (order.TimeConfirmHistory == null)
+                        {
+                            <span style="color: red;">Không xác thực bằng rfid</span> <br />
+                        }
+                        <span>@order.LogHistory</span>
+                    </li>
+                    <li class="@(order.Confirm2 > 0 ? "confirmed" : "")">
+                        @(order.TimeConfirm2?.ToString("hh:mm tt"))
+                    </li>
+                    <li class="@(order.Confirm3 > 0 ? "confirmed" : "")">
+                        @(order.TimeConfirm3?.ToString("hh:mm tt"))
+                        @if (order.IsSentTrough == true)
+                        {
+                            <br />
+                            <span>Sent to Trough @(order.TimeSendTrough?.ToString("hh:mm tt"))</span>
+                            <br />
+                        }
+                        else
+                        {
+                            if (order.Confirm3 > 0)
+                            {
+                                <br />
+                                <span style="color: red;">Không gửi vào máng</span>
+                                <br />
+                            }
+
+                        }
+
+                        <span>@(order.WeightIn > 0 ? order.WeightIn + " kg" : "") - @(order.WeightOut > 0 ? order.WeightOut + " kg" : "")</span>
+                    </li>
+                    <li class="@(order.Confirm4 > 0 ? "confirmed" : "")">
+                        @(order.TimeConfirm4?.ToString("hh:mm tt"))
+                        @if (order.Confirm4 > 0)
+                        {
+                            <br />
+                            <span>@order.LogCall</span>
+                            <br />
+                        }
+                    </li>
+                    <li class="@(order.Confirm5 > 0 ? "confirmed" : "")">@(order.TimeConfirm5?.ToString("hh:mm tt"))</li>
+                    <li class="@(order.Confirm6 > 0 ? "confirmed" : "")">@(order.TimeConfirm6?.ToString("hh:mm tt"))</li>
+                    <li class="@(order.Confirm7 > 0 ? "confirmed" : "")">@(order.TimeConfirm7?.ToString("hh:mm tt"))</li>
+                    <li class="@(order.Confirm8 > 0 ? "confirmed" : "")">@(order.TimeConfirm8?.ToString("hh:mm tt"))</li>
+                    <li class="@(order.Confirm9 > 0 ? "confirmed" : "")">@(order.TimeConfirm9?.ToString("hh:mm tt"))</li>
+                    @*<li id="last-child">s</li>*@
+                </ul>
+            </div>
+
+        </div>
+        <div class="log-order-container">
+            <span>@order.LogProcessOrder</span>
+        </div>
+    }
+
+</div>

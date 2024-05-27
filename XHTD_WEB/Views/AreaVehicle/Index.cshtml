@@ -1,0 +1,87 @@
+﻿@using HMXHTD.Data.DataEntity;
+@model XHTD_WEB.Controllers.AreaVehicleModel
+@{
+    ViewBag.Title = "Bản đồ xe";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    .container {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+    .card-header {
+        color: green;
+        font-weight: bolder;
+    }
+    .vehicle {
+        color: #1000ff;
+    }
+    .cardno {
+        color: red;
+    }
+    .delivery-code {
+        color: #72cb10;
+    }
+</style>
+<div class="container-area">
+        <div class="card-group">
+            <div class="card border-success mb-3">
+                <div class="card-header bg-transparent border-success">Xe đã nhận đơn (@Model.T1.Count(x => x.DeliveryCodeParent == null)) 
+                <br/> (Sản lượng:@Model.T1.Where(x=>x.TypeProduct == "PCB30" || x.TypeProduct == "PCB40").Sum(x => x.SumNumber))</div>
+                <div class="card-body">
+                    @foreach (var item in Model.T1.Where(x=>x.DeliveryCodeParent == null))
+                    {
+                        <p class="card-text fw-bold"><span class="vehicle">@item.Vehicle</span> - <span class="delivery-code">@item.DeliveryCode</span> - <span class="cardno">@item.CardNo</span></p>
+                    }
+                </div>
+                <div class="card-footer bg-transparent border-success">Lái xe đã nhận đơn</div>
+            </div>
+            <div class="card border-success mb-3">
+                <div class="card-header bg-transparent border-success">Xe ở bãi chờ trước cổng (@Model.T2.Count(x => x.DeliveryCodeParent == null)) 
+                <br /> (Sản lượng:@Model.T2.Where(x => x.TypeProduct == "PCB30" || x.TypeProduct == "PCB40").Sum(x => x.SumNumber))</div>
+                <div class="card-body">
+                    @foreach (var item in Model.T2.Where(x => x.DeliveryCodeParent == null))
+                    {
+                        <p class="card-text fw-bold"><span class="vehicle">@item.Vehicle</span> - <span class="delivery-code">@item.DeliveryCode</span> - <span class="cardno">@item.CardNo</span></p>
+                    }
+                </div>
+                <div class="card-footer bg-transparent border-success">Xe đang ở bãi chờ gọi vào</div>
+            </div>
+            <div class="card border-success mb-3">
+                <div class="card-header bg-transparent border-success">Xe ở giữa trạm cân và cổng (@Model.T3.Count(x => x.DeliveryCodeParent == null)) 
+                <br /> (Sản lượng:@Model.T3.Where(x => x.TypeProduct == "PCB30" || x.TypeProduct == "PCB40").Sum(x => x.SumNumber))</div>
+                <div class="card-body">
+                    @foreach (var item in Model.T3.Where(x => x.DeliveryCodeParent == null))
+                    {
+                        <p class="card-text fw-bold"><span class="vehicle">@item.Vehicle</span> - <span class="delivery-code">@item.DeliveryCode</span> - <span class="cardno">@item.CardNo</span></p>
+                    }
+                </div>
+                <div class="card-footer bg-transparent border-success">Xe đang vào cân vào</div>
+            </div>
+            <div class="card border-success mb-3">
+                <div class="card-header bg-transparent border-success">Xe đã cân vào (@Model.T4.Count(x => x.DeliveryCodeParent == null)) 
+                <br /> (Sản lượng:@Model.T4.Where(x => x.TypeProduct == "PCB30" || x.TypeProduct == "PCB40").Sum(x => x.SumNumber))</div>
+                <div class="card-body">
+                    @foreach (var item in Model.T4.Where(x => x.DeliveryCodeParent == null))
+                    {
+                        <p class="card-text fw-bold"><span class="vehicle">@item.Vehicle</span> - <span class="delivery-code">@item.DeliveryCode</span> - <span class="cardno">@item.CardNo</span></p>
+                    }
+                </div>
+                <div class="card-footer bg-transparent border-success">Xe đã cân vào, đang đi vào máng</div>
+            </div>
+            <div class="card border-success mb-3">
+                <div class="card-header bg-transparent border-success">Xe đã cân ra (@Model.T5.Count)
+                <br /> (Sản lượng:@Model.T5.Where(x => x.TypeProduct == "PCB30" || x.TypeProduct == "PCB40").Sum(x => x.SumNumber))</div>
+                <div class="card-body">
+                    @foreach (var item in Model.T5)
+                    {
+                        <p class="card-text fw-bold"><span class="vehicle">@item.Vehicle</span> - <span class="delivery-code">@item.DeliveryCode</span> - <span class="cardno">@item.CardNo</span></p>
+                    }
+                </div>
+                <div class="card-footer bg-transparent border-success">Xe đang cân ra, chưa ra khỏi cổng</div>
+            </div>
+        </div>
+    </div>

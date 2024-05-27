@@ -1,0 +1,307 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section metatags
+{
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+}
+
+@using HMXHTD.Data.DataEntity;
+@model List<tblStoreOrderOperating>
+<style>
+    .card-item {
+        /*width: 75rem;*/
+        padding: unset;
+    }
+
+    .card-container {
+        margin: 0 auto;
+        /*width: max-content;*/
+        background-color: lightgray;
+        padding: 0px 0px;
+    }
+
+    .card-header {
+        background-color: #885d5d;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .control-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .container-fluid{
+        padding: 0px;
+    }
+    .btn-fit {
+        height: fit-content;
+    }
+    .list-group-item .toggle{
+        width: 200px;
+    }
+    .display-block{
+        display: block;
+    }
+    .display-none{
+        display: none;
+    }
+</style>
+
+
+<div class="card-container row">
+
+    <!-- 1. Đoạn cần thêm -->
+    <form action="/Setting/Index" method="get" id="form_filter">
+        <div class="row" style="display:flex">
+            <div class="form-group col-md-8" style="display:flex; margin-bottom: 5px;padding-right: 0px;">
+                <div class="input-icon right">
+                    <i class="icon-magnifier"></i>
+                    <input type="text" class="form-control" id="keyword" name="keyword" title="nhập biển số xe" value="@ViewBag.Keyword" placeholder="Tìm kiếm...">
+                </div>
+                <select class="form-control" id="trang_thai" name="step">
+                    <option value="-1" selected>Tất cả</option>
+                    <option value="0">Chưa xác thực</option>
+                    <option value="1">Đã xác thực</option>
+                    <option value="2">Đã vào cổng</option>
+                    <option value="3">Đã cân vào</option>
+                    <option value="4">Đang mời vào</option>
+                    <option value="5">Đang lấy hàng</option>
+                    <option value="6">Đã lấy hàng</option>
+                    <option value="7">Đã cân ra</option>
+                    <option value="8">Đã ra cổng</option>
+                    <option value="9">Đã kết thúc</option>
+                </select>
+                <br />
+                
+            </div>
+            <div class="col-md-4">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                </span>
+            </div>
+
+        </div>
+
+
+
+    </form>
+    <div class="card card-item" style="margin-bottom: 15px;">
+        <div class="card-header" style="background-color: red">
+            @ViewBag.Count Đơn hàng -:- @ViewBag.CountVehicleLed Xe trước bãi led  -:- @ViewBag.CountVehicleInGate xe trong bãi máng
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="control-container">
+                    <span>Max vehicle in trough : @ViewBag.MaxVehicleInTrough</span>
+                    <div class="control-container">
+                        <input type="text" class="form-control" id="max_vehicle_trough" name="maxVehicleTrough" title="số lượng" placeholder="nhập giá trị...">
+                        <button class="btn btn-primary btn-fit" onclick="saveConfigMaxVehiceTrough()">Ghi Nhận</button>
+                    </div>
+
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="control-container">
+                    <span>max reindex when ignore call : @ViewBag.MaxReIndex</span>
+                    <div class="control-container">
+                        <input type="text" class="form-control" id="max_reindex" name="maxReIndex" title="số lượng" placeholder="nhập giá trị...">
+                        <button class="btn btn-primary btn-fit" onclick="saveConfigMaxReIndex()">Ghi Nhận</button>
+                    </div>
+
+                </div>
+            </li>
+            <li class="list-group-item" style=" justify-content: center; display: flex;">
+                <input id="check_is_call" @(ViewBag.IsCall == 1 ? "checked" : "unchecked") type="checkbox" data-toggle="toggle" data-on="Đang bật gọi loa" data-off="Đã tắt gọi loa">
+            </li>
+            <li class="list-group-item" style=" justify-content: center; display: flex;">
+                <input id="check_is_auto_scale" @(ViewBag.IsAutoScale == 1 ? "checked" : "unchecked") type="checkbox" data-toggle="toggle" data-on="Đang bật cân tự động" data-off="Đã tắt cân tự động">
+            </li>
+        </ul>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="card card-item" style="">
+            <div class="card-header">
+                @item.Vehicle  --- @item.CardNo  -- @item.DriverUserName
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Tài xế: @item.DriverUserName -- Nhận đơn lúc: @item.TimeConfirm1 -- Số lốt: @item.IndexOrder -- Step : @item.Step</li>
+                <li class="list-group-item">MSGH: @item.DeliveryCode -- @item.TypeProduct -- @item.SumNumber tấn </li>
+                <li class="list-group-item">@item.LogProcessOrder </li>
+                <li class="list-group-item">
+                    <div>
+                        @*<button class="btn btn-block" onclick="ShowHistoryCall(@item.Id)">ShowHistory</button>*@
+                        <button class="btn btn-block" onclick="ShowAction(@item.Id)">ShowAction</button>
+                    </div>
+                    <div id="history_call_@item.Id"></div>
+                </li>
+                <li class="list-group-item display-none" id="actions_@item.Id">
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, -1)">Hủy nhận đơn</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 0)">Hủy xác thực bước 1</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 1)">Xác thực bước 1</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 11)">Xác thực lại bước 1</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 2)">Xác thực bước 2</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 3)">Xác thực bước 3</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 4)">Xác thực bước 4</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 5)">Xác thực bước 5</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 6)">Xác thực bước 6</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 7)">Xác thực bước 7</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 8)">Xác thực bước 8</button>
+                    <button class="btn btn-default" onclick="SetStepOrderFunc(@item.Id, 9)">Xác thực bước 9</button>
+                </li>
+            </ul>
+        </div>
+    }
+    
+</div>
+@*@ViewBag.IsCall*@
+<script>
+    $(document).ready(function () {
+        $('#trang_thai option')
+            .removeAttr('selected')
+            .filter('[value="@ViewBag.Step"]')
+            .attr('selected', true);
+        if (1==2) {
+            $('#check_is_call').prop('checked', true).change();
+        } else {
+            $('#check_is_call').prop('unchecked', true).change();
+        }
+        
+        
+
+        $("#check_is_call").on('change', function () {
+            if ($(this).is(':checked')) {
+                switchStatus = $(this).is(':checked');
+                saveConfigIsCall(true)
+            }
+            else {
+                switchStatus = $(this).is(':checked');
+                saveConfigIsCall(false);
+            }
+        });
+
+        $("#check_is_auto_scale").on('change', function () {
+            if ($(this).is(':checked')) {
+                switchStatus2 = $(this).is(':checked');
+                saveConfigIsAutoScale(true)
+            }
+            else {
+                switchStatus2 = $(this).is(':checked');
+                saveConfigIsAutoScale(false);
+            }
+        });
+
+    });
+    function saveConfigMaxVehiceTrough() {
+        $.ajax({
+            type: "POST",
+            url: "/Setting/SetMaxVehicleInTrough?value=" + $("#max_vehicle_trough").val(),
+            dataType: "json",
+            success: function (response) {
+                toastr.success(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+    function saveConfigMaxReIndex() {
+        $.ajax({
+            type: "POST",
+            url: "/Setting/SetMaxReIndex?value=" + $("#max_reindex").val(),
+            dataType: "json",
+            success: function (response) {
+                toastr.success(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+    function saveConfigIsCall(isCheck) {
+        $.ajax({
+            type: "POST",
+            url: "/Setting/SetIsCall?isCall=" + isCheck,
+            dataType: "json",
+            success: function (response) {
+                toastr.success(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+    function saveConfigIsAutoScale(isCheck) {
+        $.ajax({
+            type: "POST",
+            url: "/Setting/SetIsAutoScale?isAutoScale=" + isCheck,
+            dataType: "json",
+            success: function (response) {
+                toastr.success(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+
+
+
+    function ShowHistoryCall(id) {
+        $.ajax({
+            type: "GET",
+            url: "/Setting/GetHistoryCall?id=" + id,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                $("#history_call_" + id).html(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+    function SetStepOrderFunc(id, step) {
+        $.ajax({
+            type: "POST",
+            url: "/Setting/SetStepOrder?id=" + id + "&step=" + step,
+            dataType: "json",
+            success: function (response) {
+                toastr.success(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+
+    function ShowAction(id) {
+        console.log(id);
+        document.getElementById("actions_" + id).removeClassName = "display-none";
+        document.getElementById("actions_" + id).className = "display-block";
+    }
+
+</script>

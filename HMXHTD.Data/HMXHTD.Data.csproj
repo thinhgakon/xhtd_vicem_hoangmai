@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\TVS.HM.XHTD V3\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\TVS.HM.XHTD V3\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9CD8A972-6324-4180-876B-D68C8B29C76C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HMXHTD.Data</RootNamespace>
+    <AssemblyName>HMXHTD.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>HMXHTD_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consts\StoreOrderConst.cs" />
+    <Compile Include="DataEntity\HMXHTDModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMXHTDModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\HMXHTDModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\HMXHTDModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMXHTDModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\LogStoreOrderOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblCallVehicleStatu.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblConfigOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblDeliveryCodeTroughOnDemandOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblDeliveryCodeTroughOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblDeviceOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblDistributor.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblKCSOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblRFID.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblScaleLogOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblScaleOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblStoreOrderOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblStoreOrderOperatingPriority.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblTrough.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblTroughOrderOperating.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblVehicle.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntity\tblVehicleVoice.cs">
+      <DependentUpon>HMXHTDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CardNoLog.cs" />
+    <Compile Include="Models\OrderOracleScaleModel.cs" />
+    <Compile Include="Models\RequestVoiceTTS.cs" />
+    <Compile Include="Models\ScaleInfoRealTimeModel.cs" />
+    <Compile Include="Models\StoreOrderForLED12.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DataEntity\HMXHTDModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HMXHTDModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataEntity\HMXHTDModel.edmx.diagram">
+      <DependentUpon>HMXHTDModel.edmx</DependentUpon>
+    </None>
+    <None Include="HMXHTD_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataEntity\HMXHTDModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HMXHTDModel.edmx</DependentUpon>
+      <LastGenOutput>HMXHTDModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataEntity\HMXHTDModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HMXHTDModel.edmx</DependentUpon>
+      <LastGenOutput>HMXHTDModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="LibDll\Oracle.DataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

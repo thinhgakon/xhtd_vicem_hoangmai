@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section metatags
+{
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+}
+
+@model List<XHTD_WEB.Controllers.ScaleLog>
+<style>
+    .card-item {
+        /*width: 75rem;*/
+    }
+
+    .card-container {
+        margin: 0 auto;
+        /*width: max-content;*/
+        background-color: lightgray;
+        padding: 0px 0px;
+    }
+
+    .card-header {
+        background-color: #885d5d;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .control-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container-fluid {
+        padding: 0px;
+    }
+
+    .btn-fit {
+        height: fit-content;
+    }
+
+    .list-group-item .toggle {
+        width: 200px;
+    }
+
+    .display-block {
+        display: block;
+    }
+
+    .display-none {
+        display: none;
+    }
+</style>
+
+
+<div class="card-container">
+
+    @foreach (var item in Model)
+    {
+        <div class="card card-item">
+            <div class="card-header">
+                @item.Vehicle  -:- @item.CreatedOn
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cân vào : @item.WeightScaleIn kg  -- cân lúc : @item.TimeInScale</li>
+                <li class="list-group-item">Cân ra: @item.WeightScaleOut kg  --  cân lúc : @item.TimeOutScale</li>
+                <li class="list-group-item">Cân thực tế @item.LoadWeightNull -:- @item.LoadWeightFull</li>
+            </ul>
+        </div>
+    }
+
+</div>

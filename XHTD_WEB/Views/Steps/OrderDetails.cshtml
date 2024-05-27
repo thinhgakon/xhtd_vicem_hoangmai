@@ -1,0 +1,52 @@
+﻿@using XHTD_WEB.Models;
+@model OrderOracleModel
+@{
+    ViewBag.Title = "OrderDetails";
+}
+@section metatags
+{
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+}
+<style>
+    body {
+        background-color: white !important;
+    }
+
+    .card-item {
+        padding-top: 15px;
+    }
+
+    .card-container {
+        margin: 0 auto;
+        /*width: max-content;*/
+        background-color: lightgray;
+        padding: 0px 0px;
+    }
+
+    .card-header {
+        background-color: #885d5d;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+
+@*<div>
+        <div>Trạng thái: @Model.STATUS</div>
+        <div>Cân vào: @Model.WEIGHTNULL tấn lúc @Model.TIMEIN</div>
+        <div>Cân ra: @Model.WEIGHTFULL tấn lúc @Model.TIMEOUT</div>
+        <div>Loại sp: @Model.ITEM_NAME</div>
+        <div>Mã vùng: @Model.LOCATION_CODE</div>
+    </div>*@
+
+<div class="card card-item" style="">
+    <div class="card-header">
+        @Model.VEHICLE_CODE -  @Model.STATUS
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">@Model.WEIGHTNULL at @Model.TIMEIN</li>
+        <li class="list-group-item">@Model.WEIGHTFULL at @Model.TIMEOUT</li>
+        <li class="list-group-item">TypeItem @Model.ITEM_NAME</li>
+        <li class="list-group-item">LocationCode @Model.LOCATION_CODE</li>
+    </ul>
+</div>

@@ -1,0 +1,177 @@
+﻿Build started...
+1>------ Build started: Project: HMXHTD, Configuration: Debug Any CPU ------
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(6,7,6,33): warning CS0105: The using directive for 'System.Collections.Generic' appeared previously in this namespace
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(7,7,7,18): warning CS0105: The using directive for 'System.Linq' appeared previously in this namespace
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(8,7,8,18): warning CS0105: The using directive for 'System.Text' appeared previously in this namespace
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(9,7,9,29): warning CS0105: The using directive for 'System.Threading.Tasks' appeared previously in this namespace
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(64,30,64,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(91,30,91,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(113,30,113,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(114,30,114,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\StoreOrderOperatingLogs.cs(18,30,18,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\StoreOrderOperatingLogs.cs(30,30,30,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(290,30,290,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(314,30,314,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(336,30,336,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(363,30,363,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(387,30,387,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Account.cs(409,30,409,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Vehicle.cs(622,17,622,25): warning CS0219: The variable 'tmpValue' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(30,30,30,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\BillOrder.cs(686,30,686,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(41,45,41,99): warning CS0618: 'ConfigurationSettings.AppSettings' is obsolete: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(48,55,48,109): warning CS0618: 'ConfigurationSettings.AppSettings' is obsolete: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(49,50,49,104): warning CS0618: 'ConfigurationSettings.AppSettings' is obsolete: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(50,50,50,104): warning CS0618: 'ConfigurationSettings.AppSettings' is obsolete: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(51,51,51,105): warning CS0618: 'ConfigurationSettings.AppSettings' is obsolete: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(57,30,57,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(67,45,67,99): warning CS0618: 'ConfigurationSettings.AppSettings' is obsolete: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(76,30,76,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(89,30,89,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Print.cs(110,30,110,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Driver.cs(79,34,79,36): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Driver.cs(85,31,85,33): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Driver.cs(111,30,111,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Driver.cs(156,30,156,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\SignalRNotification\ConnectSignalR.cs(28,41,28,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFID.cs(170,30,170,34): warning CS0168: The variable 'rror' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDCamera.cs(302,17,302,20): warning CS0162: Unreachable code detected
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFID.cs(180,17,180,20): warning CS0162: Unreachable code detected
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFID.cs(194,30,194,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDCamera.cs(351,30,351,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFID.cs(228,30,228,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFID.cs(274,38,274,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\BillOrder.cs(1516,29,1516,31): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDCameraWithSign.cs(148,30,148,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Device.cs(87,29,87,31): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\Device.cs(127,30,127,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\FrmDriver.cs(240,38,240,68): warning CS1690: Accessing a member on 'FrmDriverFindUserName.AccId' may cause a runtime exception because it is a field of a marshal-by-reference class
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\FrmDriver.cs(283,83,283,113): warning CS1690: Accessing a member on 'FrmDriverFindUserName.AccId' may cause a runtime exception because it is a field of a marshal-by-reference class
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDWithImage.cs(122,30,122,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDWithImage.cs(166,38,166,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\Core\BillOrder.cs(1774,30,1774,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmDriverVoucher.cs(201,30,201,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmDriverVoucher.cs(278,30,278,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmLogin.cs(54,41,54,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmLogin.cs(124,34,124,53): warning CS0168: The variable 'objVehicleStoreInfo' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskConfirm.cs(51,41,51,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(72,41,72,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(87,21,87,59): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(105,21,105,59): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(69,41,69,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(84,21,84,59): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(102,21,102,59): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(58,41,58,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(512,30,512,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(536,30,536,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(57,41,57,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(447,30,447,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(346,30,346,32): warning CS0168: The variable 'Ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(715,20,715,23): warning CS0168: The variable 'str' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(716,17,716,21): warning CS0168: The variable 'rCnt' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(717,17,717,21): warning CS0168: The variable 'cCnt' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(50,13,50,27): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(67,30,67,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(115,41,115,43): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScaleBarie.cs(94,21,94,35): warning CS0219: The variable 'doorOrAuxoutID' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScaleBarie.cs(149,21,149,35): warning CS0219: The variable 'doorOrAuxoutID' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(357,30,357,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(391,21,391,36): warning CS4014: Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(394,30,394,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(425,30,425,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(736,38,736,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(785,38,785,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(807,30,807,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(835,30,835,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(498,28,498,41): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(699,30,699,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(727,30,727,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(753,30,753,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(844,30,844,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(1164,30,1164,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(39,24,39,34): warning CS0649: Field 'frmTaskScale.threadArea' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(63,24,63,37): warning CS0649: Field 'frmMainControl.threadScale31' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(34,21,34,27): warning CS0169: The field 'frmTaskInOutNew.operID' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(77,24,77,37): warning CS0169: The field 'frmMainControl.threadScale33' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(84,24,84,37): warning CS0169: The field 'frmMainControl.threadScale34' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(41,24,41,37): warning CS0649: Field 'frmMainControl.threadConfirm' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(27,24,27,35): warning CS0649: Field 'frmTaskInOutNew.threadVoice' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmDevice.cs(14,24,14,34): warning CS0169: The field 'frmDevice.threadArea' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(25,24,25,35): warning CS0649: Field 'frmTaskInOut.threadVoice' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(29,24,29,35): warning CS0649: Field 'frmTaskRelease2.threadVoice' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(70,24,70,37): warning CS0649: Field 'frmMainControl.threadScale32' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(38,24,38,37): warning CS0169: The field 'frmTaskInOutNew.threadInOut21' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(34,61,34,71): warning CS0169: The field 'frmTaskInOutNew.doorAction' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(33,27,33,36): warning CS0169: The field 'frmTaskInOutNew.TableInfo' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(34,45,34,59): warning CS0169: The field 'frmTaskInOutNew.outputAddrType' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(32,29,32,43): warning CS0169: The field 'frmTaskInOut.doorOrAuxoutID' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(32,45,32,59): warning CS0169: The field 'frmTaskInOut.outputAddrType' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(31,27,31,36): warning CS0169: The field 'frmTaskInOut.TableInfo' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(34,29,34,43): warning CS0169: The field 'frmTaskInOutNew.doorOrAuxoutID' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(27,24,27,39): warning CS0649: Field 'frmMainControl.threadBillOrder' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(36,24,36,37): warning CS0169: The field 'frmTaskInOut.threadInOut21' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(48,24,48,37): warning CS0649: Field 'frmMainControl.threadInOut21' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(32,21,32,27): warning CS0169: The field 'frmTaskInOut.operID' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(26,24,26,32): warning CS0169: The field 'frmMainControl.strToken' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(25,24,25,35): warning CS0649: Field 'frmTaskRelease.threadVoice' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(34,24,34,35): warning CS0649: Field 'frmMainControl.threadLED12' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(32,61,32,71): warning CS0169: The field 'frmTaskInOut.doorAction' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmDriverVoucher.cs(22,24,22,37): warning CS0169: The field 'frmDriverVoucher.threadVoucher' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(33,24,33,36): warning CS0649: Field 'frmMainControl.threadVoice1' is never assigned to, and will always have its default value null
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(56,24,56,37): warning CS0169: The field 'frmMainControl.threadInOut22' is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(94,13,94,30): warning CS0414: The field 'frmMainControl.m_nSendType_LED12' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskOperating.cs(25,45,25,52): warning CS0414: The field 'frmTaskOperating.StateId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(35,40,35,44): warning CS0414: The field 'frmTaskInOutNew.port' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(41,32,41,39): warning CS0414: The field 'frmTaskScale.OrderId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(32,129,32,135): warning CS0414: The field 'frmTaskRelease2.StepId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(91,13,91,30): warning CS0414: The field 'frmMainControl.m_nSendType_LED11' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(32,32,32,47): warning CS0414: The field 'frmTaskRelease2.TimeSleepVoice1' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(32,117,32,123): warning CS0414: The field 'frmTaskRelease2.Trough' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(39,13,39,29): warning CS0414: The field 'frmTaskInOut.TimeSleepInOut21' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(30,89,30,104): warning CS0414: The field 'frmTaskInOutNew.TimeSleepVoice3' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmVehicle.cs(17,21,17,23): warning CS0414: The field 'frmVehicle.Id' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,80,28,95): warning CS0414: The field 'frmTaskRelease.TimeSleepVoice3' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmDevice.cs(17,13,17,22): warning CS0414: The field 'frmDevice.TimeSleep' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(33,40,33,44): warning CS0414: The field 'frmTaskInOut.port' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,104,28,111): warning CS0414: The field 'frmTaskRelease.OrderId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(30,40,30,55): warning CS0414: The field 'frmTaskInOutNew.TimeSleepVoice1' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(41,45,41,51): warning CS0414: The field 'frmTaskScale.StepId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(24,24,24,35): warning CS0414: The field 'frmMainControl.userNameAPI' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(39,24,39,37): warning CS0414: The field 'frmTaskInOutNew.InOut21Config' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,117,28,123): warning CS0414: The field 'frmTaskRelease.Trough' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,129,28,135): warning CS0414: The field 'frmTaskRelease.StepId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,56,28,71): warning CS0414: The field 'frmTaskRelease.TimeSleepVoice2' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(59,13,59,29): warning CS0414: The field 'frmMainControl.TimeSleepInOut22' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(30,113,30,120): warning CS0414: The field 'frmTaskInOutNew.OrderId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(73,13,73,29): warning CS0414: The field 'frmMainControl.TimeSleepScale32' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskScale.cs(41,13,41,22): warning CS0414: The field 'frmTaskScale.TimeSleep' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(87,13,87,29): warning CS0414: The field 'frmMainControl.TimeSleepScale34' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(100,13,100,30): warning CS0414: The field 'frmMainControl.m_nSendType_LED22' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(28,40,28,55): warning CS0414: The field 'frmTaskInOut.TimeSleepVoice1' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(66,13,66,29): warning CS0414: The field 'frmMainControl.TimeSleepScale31' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(25,24,25,35): warning CS0414: The field 'frmMainControl.passwordAPI' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(80,13,80,29): warning CS0414: The field 'frmMainControl.TimeSleepScale33' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(51,13,51,29): warning CS0414: The field 'frmMainControl.TimeSleepInOut21' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(41,13,41,29): warning CS0414: The field 'frmTaskInOutNew.TimeSleepInOut21' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(33,24,33,33): warning CS0414: The field 'frmTaskInOut.ipaddress' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(28,126,28,132): warning CS0414: The field 'frmTaskInOut.StepId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(28,113,28,120): warning CS0414: The field 'frmTaskInOut.OrderId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(30,65,30,80): warning CS0414: The field 'frmTaskInOutNew.TimeSleepVoice2' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(23,24,23,39): warning CS0414: The field 'frmMainControl.LinkAPI_WebSale' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(32,80,32,95): warning CS0414: The field 'frmTaskRelease2.TimeSleepVoice3' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(37,24,37,37): warning CS0414: The field 'frmTaskInOut.InOut21Config' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(32,142,32,152): warning CS0414: The field 'frmTaskRelease2.IndexOrder' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\BarrierLib\BarrierScaleLib.cs(19,29,19,42): warning CS0414: The field 'BarrierScaleBusiness.M221Connected' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDCamera.cs(34,27,34,36): warning CS0414: The field 'frmConfirmRFIDCamera.stopWatch' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmConfirmRFIDCameraWithSign.cs(36,27,36,36): warning CS0414: The field 'frmConfirmRFIDCameraWithSign.stopWatch' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,142,28,152): warning CS0414: The field 'frmTaskRelease.IndexOrder' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease2.cs(32,56,32,71): warning CS0414: The field 'frmTaskRelease2.TimeSleepVoice2' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(30,126,30,132): warning CS0414: The field 'frmTaskInOutNew.StepId' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(28,89,28,104): warning CS0414: The field 'frmTaskInOut.TimeSleepVoice3' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(44,13,44,29): warning CS0414: The field 'frmMainControl.TimeSleepConfirm' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmMainControl.cs(97,13,97,30): warning CS0414: The field 'frmMainControl.m_nSendType_LED21' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOutNew.cs(35,24,35,33): warning CS0414: The field 'frmTaskInOutNew.ipaddress' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskRelease.cs(28,32,28,47): warning CS0414: The field 'frmTaskRelease.TimeSleepVoice1' is assigned but its value is never used
+1>D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\frmTaskInOut.cs(28,65,28,80): warning CS0414: The field 'frmTaskInOut.TimeSleepVoice2' is assigned but its value is never used
+1>  HMXHTD -> D:\Projects\VICEM\HOANGMAI\XHTD-FULL\xuathangtudong\bin\Debug\HMXHTD.exe
+========== Build: 1 succeeded, 0 failed, 2 up-to-date, 0 skipped ==========

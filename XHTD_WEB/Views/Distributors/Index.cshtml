@@ -1,0 +1,117 @@
+﻿@using HMXHTD.Data.DataEntity;
+@model List<tblDistributor>
+@{
+    ViewBag.Title = "Danh sách xe - nhà phân phối";
+    var vehicles = (List<XHTD_WEB.Controllers.ReportVehicles>)ViewBag.Vehicles;
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    body {
+        background-color: white !important;
+    }
+    .vehicle-container {
+        display: flex;
+    }
+</style>
+
+
+<div class="card-container row">
+
+    <!-- 1. Đoạn cần thêm -->
+    <form action="/Distributors/Index" method="get" id="form_filter" style="">
+        <div class="row" style="display:flex">
+            <div class="form-group col-md-8" style="display:flex; margin-bottom: 5px;padding-right: 0px;">
+                <select class="form-control" id="trang_thai" name="IdDistributor">
+                    @*<option value="-1" selected>Tất cả</option>*@
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.IDDistributor">@item.NameDistributor</option>
+                    }
+
+                </select>
+                <br />
+
+            </div>
+            <div class="col-md-4">
+                <span class="input-group-btn" style="text-align: right;">
+                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                </span>
+            </div>
+
+        </div>
+    </form>
+    <table style="        width: 100%;
+        align-items: center;
+        margin: auto;
+        margin-top: 0px;
+        background-color: #f2f2f9;
+">
+        <thead>
+            <tr style="        padding: 0px !important;
+        background-color: #f9f9fa !important;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: middle;
+        color: #333;
+        font-weight: 700;
+        border-bottom: solid 2px #fff;">
+                <th style="text-align: center;padding-left: 10px !important;padding-right: 10px !important;border-right: solid 2px #fff;" scope="col">BIỂN SỐ XE</th>
+                <th style="text-align: right;padding-right: 10px !important;" scope="col">TÀI XẾ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in vehicles)
+            {
+                <tr style=" padding-top: 50px; font-size: 16px; text-align: justify; vertical-align: middle; color: white; font-weight: 700;">
+                    <td style="        width: 350px;
+        color: #ec0b0b;
+        text-align: center;
+        border-right: solid 2px #fff;
+        border-bottom: solid 2px #fff;">
+                        @item.Vehicle
+                    </td>
+                    <td style="text-align: right;
+        border-bottom: solid 2px #fff;
+        color: #ec0b0b;
+        padding-right: 10px !important;">
+                        @item.NameDriver
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @*<div class="row">
+        <button class="btn btn-success" onclick="ExportExcel()">Export Excel</button>
+    </div>*@
+    <div>
+        <a class="btn btn-success" href="@Url.Action("ExportToExcel", "Distributors", new { IdDistributor = @ViewBag.IdDistributor,fileName =  @ViewBag.DistributorName })">Export Excel</a>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#trang_thai option')
+            .removeAttr('selected')
+            .filter('[value="@ViewBag.IdDistributor"]')
+            .attr('selected', true);
+
+
+    });
+    function ExportExcel() {
+        $.ajax({
+            type: "GET",
+            url: "/Distributors/ExportToExcel?IdDistributor=" + @ViewBag.IdDistributor +"&fileName=" + "@ViewBag.DistributorName",
+            dataType: "json",
+            success: function (response) {
+                 window.location = '@Url.Action("DownloadAttachment", "PostDetail")';
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+</script>

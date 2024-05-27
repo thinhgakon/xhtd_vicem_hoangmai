@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "Xuất hàng tự động";
+}
+@section metatags
+{
+    <meta http-equiv="refresh" content="15">
+    <meta name="viewport" content="width=1024">
+}
+<style>
+    .blink_me {
+        animation: flash 3s linear infinite;
+    }
+
+    .vehicle {
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    .status {
+        text-align: right;
+        padding-right: 50px;
+    }
+
+    @@-webkit-keyframes flash {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: .1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @@keyframes flash {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: .1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .td-style-left {
+    }
+
+    .container-fluid {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .blinking {
+        animation: blinkingText 2.5s infinite;
+    }
+
+    @@keyframes blinkingText {
+        0% {
+            color: #ff0a0a;
+        }
+
+        49% {
+            color: #ff0a0a;
+        }
+
+        60% {
+            color: transparent;
+        }
+
+        99% {
+            color: transparent;
+        }
+
+        100% {
+            color: #000;
+        }
+    }
+</style>
+@model List<XHTD_WEB.Controllers.StoreOrderForLED12>
+@if (Model.Count < 1)
+{
+    <table style="width:100%!important; max-width:100%!important; margin-top:100px;">
+        <tr>
+            <td style="text-align:center;">
+                <img src="~/Content/logo.png" />
+            </td>
+        </tr>
+    </table>
+
+    <table style="width:100%!important; max-width:100%!important; margin-top:30px;">
+        <tr>
+            <td style="        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        color: #fff;
+        font-weight: 700;">
+                HỆ THỐNG
+                <br />
+                XUẤT HÀNG TỰ ĐỘNG
+            </td>
+        </tr>
+    </table>
+
+    @*<div style=" text-align: center; vertical-align: middle; color: white; font-size: 65px; padding-top: 100px; font-weight: 700;">
+            <div>VICEM HOÀNG MAI</div>
+            <div>HỆ THỐNG</div>
+            <div>XUẤT HÀNG TỰ ĐỘNG</div>
+        </div>*@
+}
+else
+{
+    <table style="width: 100%; align-items: center; margin: auto; margin-top: 0px;">
+        <thead>
+            <tr style="padding: 0px !important;background-color: #f9f9fa !important;font-size: 50px;text-align: center;vertical-align: middle;color: #0000ff;font-weight: 700;border-bottom: solid 2px #fff;">
+                <th style="text-align: center;padding-left: 10px !important;padding-right: 10px !important;border-right: solid 2px #fff;" scope="col">BIỂN SỐ XE</th>
+                <th style="text-align: right;padding-right: 10px !important;" scope="col">TRẠNG THÁI</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+            <tr style=" padding-top: 50px; font-size: 50px; text-align: justify; vertical-align: middle; color: white; font-weight: 700;">
+
+                @if (order.State1.ToUpper() == "MỜI XE VÀO")
+                {
+                    <td class="blinking" style="width: 350px;border-bottom: solid 2px #fff;color: #ff0a0a;background-color: #ffd800;text-align: center !important;border-right: solid 2px #fff;">
+                        <a href="/History/Index?keyword=@order.Vehicle&step=4" style="text-decoration: none !important; color: white !important" target="_blank"><blink>@order.Vehicle</blink></a>
+                    </td>
+                    <td class="blinking" style="text-align: right;color: #ff0a0a;background-color: #ffd800;border-bottom: solid 2px #fff;padding-right: 10px !important;">
+                        @order.State1.ToUpper()
+                    </td>
+                }
+                else
+                {
+                    
+            <td style="width: 350px;color: #fff;text-align: center;border-right: solid 2px #fff;border-bottom: solid 2px #fff;">
+                <a href="/History/Index?keyword=@order.Vehicle&step=1" style="text-decoration: none !important; color: white !important" target="_blank"><blink>@order.Vehicle</blink></a>
+                @*@order.Vehicle*@
+            </td>
+                    <td style="text-align: right;border-bottom: solid 2px #fff;color: #fff;padding-right: 10px !important;">
+                        @order.State1.ToUpper()
+                    </td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div style="display:none">
+        <div style=" padding-top: 50px; font-size: 50px; text-align: center; vertical-align: middle; color: white; font-weight: 700;">
+            <div class="row">
+                <div class="col-md-6" style="text-align:left">BIỂN SỐ XE</div>
+                <div class="col-md-6" style=" text-align: right; padding-right: 140px;">TRẠNG THÁI</div>
+            </div>
+            @foreach (var order in Model)
+            {
+        <div class="row">
+
+            @if (order.State1.ToUpper() == "MỜI XE VÀO")
+            {
+                <div class="col-md-6 vehicle" style="color: #ff0a0a;"><blink>@order.Vehicle</blink></div>
+                <div class="col-md-6 blink_me status" style="color: #ff0a0a;padding-right: 120px;">@order.State1.ToUpper()</div>;
+            }
+            else
+            {
+                <div class="col-md-6 vehicle">@order.Vehicle</div>
+                <div class="col-md-6 status">@order.State1.ToUpper()</div>;
+            }
+        </div>
+            }
+        </div>
+    </div>
+
+}

@@ -1,0 +1,1104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HMXuathangtudong_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LogStoreOrderOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="Step" Type="int" />
+          <Property Name="InSystem" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblCallVehicleStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreOrderOperatingId" Type="int" Nullable="false" />
+          <Property Name="CountTry" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiledOn" Type="datetime" />
+          <Property Name="LogCall" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsDone" Type="bit" />
+          <Property Name="TypeProduct" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tblConfigOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Value" Type="int" />
+          <Property Name="ValueString" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblDeliveryCodeTroughOnDemandOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeliveryCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vehicle" Type="varchar" MaxLength="50" />
+          <Property Name="IsSentTrough" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="TimeSendTrough" Type="datetime" />
+          <Property Name="LogHistory" Type="nvarchar" MaxLength="500" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="tblDeliveryCodeTroughOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeliveryCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vehicle" Type="varchar" MaxLength="50" />
+          <Property Name="IsSentTrough" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="TimeSendTrough" Type="datetime" />
+          <Property Name="LogHistory" Type="nvarchar" MaxLength="500" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="tblDeviceOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupDevice" Type="int" />
+          <Property Name="GroupDeviceCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="GroupDeviceName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="IpAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="PortNumber" Type="int" />
+          <Property Name="State" Type="bit" />
+          <Property Name="DayCreate" Type="datetime" />
+          <Property Name="LogHistory" Type="nvarchar(max)" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="tblDistributor">
+          <Key>
+            <PropertyRef Name="IDDistributor" />
+          </Key>
+          <Property Name="IDDistributor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeStore" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDDistributorSyn" Type="int" />
+          <Property Name="CodeDistributor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameDistributor" Type="nvarchar" MaxLength="500" />
+          <Property Name="AddressDistributor" Type="nvarchar" MaxLength="500" />
+          <Property Name="PhoneDistributor" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailDistributor" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMSDistributor" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDProvince" Type="int" />
+          <Property Name="NameProvince" Type="nvarchar" MaxLength="250" />
+          <Property Name="IDDistrict" Type="int" />
+          <Property Name="NameDistrict" Type="nvarchar" MaxLength="250" />
+          <Property Name="IDWard" Type="int" />
+          <Property Name="NameWard" Type="nvarchar" MaxLength="250" />
+          <Property Name="TypeOrder" Type="int" />
+          <Property Name="State" Type="bit" />
+          <Property Name="DisCount" Type="bit" />
+          <Property Name="DaySyn" Type="datetime" />
+          <Property Name="ExportStoreDistributor" Type="bit" />
+          <Property Name="CreateOrderExport" Type="bit" />
+          <Property Name="LockInDbet" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblKCSOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="KCSCode" Type="varchar" MaxLength="50" />
+          <Property Name="LinkKCS" Type="varchar" MaxLength="250" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityType Name="tblRFID">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="DayReleased" Type="datetime" />
+          <Property Name="DayExpired" Type="datetime" />
+          <Property Name="UserReleased" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="350" />
+          <Property Name="State" Type="bit" />
+          <Property Name="DayCreate" Type="datetime" />
+          <Property Name="DayUpdate" Type="datetime" />
+          <Property Name="UserCreate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserUpdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastEnter" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblScaleLogOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifieldOn" Type="datetime" />
+          <Property Name="WeightScaleIn" Type="float" />
+          <Property Name="WeightScaleOut" Type="float" />
+          <Property Name="LoadWeightNull" Type="float" />
+          <Property Name="LoadWeightFull" Type="float" />
+          <Property Name="IsSynced" Type="bit" />
+          <Property Name="IsSentScaleIn" Type="bit" />
+          <Property Name="IsSentScaleOut" Type="bit" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="IsDistributeScaleIn" Type="bit" />
+          <Property Name="IsDistributeScaleOut" Type="bit" />
+          <Property Name="TimeInScale" Type="datetime" />
+          <Property Name="TimeOutScale" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblScaleOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScaleCode" Type="varchar" MaxLength="50" />
+          <Property Name="ScaleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsScaling" Type="bit" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryCode" Type="varchar" MaxLength="50" />
+          <Property Name="ScaleIn" Type="bit" />
+          <Property Name="ScaleOut" Type="bit" />
+          <Property Name="ModifieldOn" Type="datetime" />
+          <Property Name="TimeIn" Type="datetime" />
+          <Property Name="TouchSensor" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblStoreOrderOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="DriverName" Type="nvarchar" MaxLength="250" />
+          <Property Name="NameDistributor" Type="nvarchar" MaxLength="500" />
+          <Property Name="ItemId" Type="float" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="250" />
+          <Property Name="CatId" Type="nvarchar" MaxLength="50" />
+          <Property Name="SumNumber" Type="decimal" Precision="18" Scale="1" />
+          <Property Name="TimeIn33" Type="datetime" />
+          <Property Name="CardNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="DeliveryCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryCodeParent" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="TypeProduct" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeIn21" Type="datetime" />
+          <Property Name="TimeIn22" Type="datetime" />
+          <Property Name="Confirm1" Type="int" />
+          <Property Name="TimeConfirm1" Type="datetime" />
+          <Property Name="Confirm2" Type="int" />
+          <Property Name="TimeConfirm2" Type="datetime" />
+          <Property Name="Confirm3" Type="int" />
+          <Property Name="TimeConfirm3" Type="datetime" />
+          <Property Name="Confirm4" Type="int" />
+          <Property Name="TimeConfirm4" Type="datetime" />
+          <Property Name="Confirm5" Type="int" />
+          <Property Name="TimeConfirm5" Type="datetime" />
+          <Property Name="Confirm6" Type="int" />
+          <Property Name="TimeConfirm6" Type="datetime" />
+          <Property Name="Confirm7" Type="int" />
+          <Property Name="TimeConfirm7" Type="datetime" />
+          <Property Name="Confirm8" Type="int" />
+          <Property Name="TimeConfirm8" Type="datetime" />
+          <Property Name="Confirm9" Type="int" />
+          <Property Name="TimeConfirm9" Type="datetime" />
+          <Property Name="Confirm9Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Confirm9Image" Type="nvarchar" MaxLength="300" />
+          <Property Name="Step" Type="int" />
+          <Property Name="IndexOrder" Type="int" />
+          <Property Name="IndexOrder1" Type="int" />
+          <Property Name="IndexOrder2" Type="int" />
+          <Property Name="Trough" Type="int" />
+          <Property Name="Trough1" Type="int" />
+          <Property Name="NumberVoice" Type="int" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prioritize" Type="int" />
+          <Property Name="DayCreate" Type="datetime" />
+          <Property Name="IDDistributorSyn" Type="int" />
+          <Property Name="AreaId" Type="int" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="250" />
+          <Property Name="CodeStore" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameStore" Type="nvarchar" MaxLength="500" />
+          <Property Name="DriverUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DriverAccept" Type="datetime" />
+          <Property Name="IndexOrderTemp" Type="int" />
+          <Property Name="WeightIn" Type="int" />
+          <Property Name="WeightInTime" Type="datetime" />
+          <Property Name="WeightOut" Type="int" />
+          <Property Name="WeightOutTime" Type="datetime" />
+          <Property Name="NoteFinish" Type="nvarchar" MaxLength="500" />
+          <Property Name="Longitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountReindex" Type="int" />
+          <Property Name="IsVoiced" Type="bit" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="LockInDbet" Type="bit" />
+          <Property Name="LogJobAttach" Type="nvarchar(max)" />
+          <Property Name="IsSyncedByNewWS" Type="bit" />
+          <Property Name="TroughLineCode" Type="varchar" MaxLength="50" />
+          <Property Name="IsScaleAuto" Type="bit" />
+          <Property Name="TimeConfirmHistory" Type="datetime" />
+          <Property Name="LogHistory" Type="nvarchar" MaxLength="500" />
+          <Property Name="MoocCode" Type="varchar" MaxLength="50" />
+          <Property Name="LogProcessOrder" Type="nvarchar(max)" />
+          <Property Name="DriverPrintNumber" Type="int" />
+          <Property Name="DriverPrintTime" Type="datetime" />
+          <Property Name="WarningNotCall" Type="bit" />
+          <Property Name="XiRoiAttatchmentFile" Type="nvarchar" MaxLength="250" />
+          <Property Name="PackageNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Shifts" Type="int" />
+          <Property Name="AutoScaleOut" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblStoreOrderOperatingPriority">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TypeProduct" Type="nvarchar" MaxLength="50" />
+          <Property Name="Priority" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTrough">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="2" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="ProductId" Type="nvarchar" MaxLength="1500" />
+          <Property Name="Height" Type="nvarchar" MaxLength="50" />
+          <Property Name="Width" Type="nvarchar" MaxLength="50" />
+          <Property Name="Long" Type="nvarchar" MaxLength="50" />
+          <Property Name="Working" Type="bit" />
+          <Property Name="Problem" Type="bit" />
+          <Property Name="State" Type="bit" />
+          <Property Name="ProductTypes" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryCodeCurrent" Type="varchar" MaxLength="50" />
+          <Property Name="PlanQuantityCurrent" Type="float" />
+          <Property Name="CountQuantityCurrent" Type="float" />
+          <Property Name="IsPicking" Type="bit" />
+          <Property Name="TransportNameCurrent" Type="varchar" MaxLength="50" />
+          <Property Name="CheckInTimeCurrent" Type="datetime" />
+          <Property Name="IsInviting" Type="bit" />
+          <Property Name="LineCode" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="tblTroughOrderOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeliveryCode" Type="varchar" MaxLength="50" />
+          <Property Name="Vehicle" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="Status" Type="int" />
+          <Property Name="LogResponse" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblVehicle">
+          <Key>
+            <PropertyRef Name="IDVehicle" />
+          </Key>
+          <Property Name="IDVehicle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDStore" Type="int" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="250" />
+          <Property Name="Tonnage" Type="float" />
+          <Property Name="TonnageDefault" Type="float" />
+          <Property Name="NameDriver" Type="nvarchar" MaxLength="250" />
+          <Property Name="IdCardNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="HeightVehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="WidthVehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="LongVehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="DayCreate" Type="datetime" />
+          <Property Name="DayUpdate" Type="datetime" />
+          <Property Name="UserCreate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserUpdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnladenWeight1" Type="int" />
+          <Property Name="UnladenWeight2" Type="int" />
+          <Property Name="UnladenWeight3" Type="int" />
+          <Property Name="IsSetMediumUnladenWeight" Type="bit" />
+        </EntityType>
+        <EntityType Name="tblVehicleVoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehicle" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="IsCreatedVoice" Type="bit" />
+          <Property Name="Flag" Type="int" />
+        </EntityType>
+        <EntityContainer Name="HMXuathangtudong_ModelStoreContainer">
+          <EntitySet Name="LogStoreOrderOperating" EntityType="Self.LogStoreOrderOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCallVehicleStatus" EntityType="Self.tblCallVehicleStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblConfigOperating" EntityType="Self.tblConfigOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDeliveryCodeTroughOnDemandOperating" EntityType="Self.tblDeliveryCodeTroughOnDemandOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDeliveryCodeTroughOperating" EntityType="Self.tblDeliveryCodeTroughOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDeviceOperating" EntityType="Self.tblDeviceOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDistributor" EntityType="Self.tblDistributor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblKCSOperating" EntityType="Self.tblKCSOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRFID" EntityType="Self.tblRFID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblScaleLogOperating" EntityType="Self.tblScaleLogOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblScaleOperating" EntityType="Self.tblScaleOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStoreOrderOperating" EntityType="Self.tblStoreOrderOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStoreOrderOperatingPriority" EntityType="Self.tblStoreOrderOperatingPriority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTrough" EntityType="Self.tblTrough" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTroughOrderOperating" EntityType="Self.tblTroughOrderOperating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVehicle" EntityType="Self.tblVehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVehicleVoice" EntityType="Self.tblVehicleVoice" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HMXuathangtudong_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HMXuathangtudong_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDistributors" EntityType="HMXuathangtudong_Model.tblDistributor" />
+          <EntitySet Name="tblRFIDs" EntityType="HMXuathangtudong_Model.tblRFID" />
+          <EntitySet Name="LogStoreOrderOperatings" EntityType="HMXuathangtudong_Model.LogStoreOrderOperating" />
+          <EntitySet Name="tblStoreOrderOperatings" EntityType="HMXuathangtudong_Model.tblStoreOrderOperating" />
+          <EntitySet Name="tblCallVehicleStatus" EntityType="HMXuathangtudong_Model.tblCallVehicleStatu" />
+          <EntitySet Name="tblTroughs" EntityType="HMXuathangtudong_Model.tblTrough" />
+          <EntitySet Name="tblVehicleVoices" EntityType="HMXuathangtudong_Model.tblVehicleVoice" />
+          <EntitySet Name="tblScaleLogOperatings" EntityType="HMXuathangtudong_Model.tblScaleLogOperating" />
+          <EntitySet Name="tblScaleOperatings" EntityType="HMXuathangtudong_Model.tblScaleOperating" />
+          <EntitySet Name="tblStoreOrderOperatingPriorities" EntityType="HMXuathangtudong_Model.tblStoreOrderOperatingPriority" />
+          <EntitySet Name="tblVehicles" EntityType="HMXuathangtudong_Model.tblVehicle" />
+          <EntitySet Name="tblConfigOperatings" EntityType="HMXuathangtudong_Model.tblConfigOperating" />
+          <EntitySet Name="tblTroughOrderOperatings" EntityType="HMXuathangtudong_Model.tblTroughOrderOperating" />
+          <EntitySet Name="tblDeliveryCodeTroughOperatings" EntityType="HMXuathangtudong_Model.tblDeliveryCodeTroughOperating" />
+          <EntitySet Name="tblDeliveryCodeTroughOnDemandOperatings" EntityType="HMXuathangtudong_Model.tblDeliveryCodeTroughOnDemandOperating" />
+          <EntitySet Name="tblDeviceOperatings" EntityType="HMXuathangtudong_Model.tblDeviceOperating" />
+          <EntitySet Name="tblKCSOperatings" EntityType="HMXuathangtudong_Model.tblKCSOperating" />
+        </EntityContainer>
+        <EntityType Name="tblDistributor">
+          <Key>
+            <PropertyRef Name="IDDistributor" />
+          </Key>
+          <Property Name="IDDistributor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeStore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDDistributorSyn" Type="Int32" />
+          <Property Name="CodeDistributor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameDistributor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddressDistributor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneDistributor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailDistributor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMSDistributor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDProvince" Type="Int32" />
+          <Property Name="NameProvince" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IDDistrict" Type="Int32" />
+          <Property Name="NameDistrict" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IDWard" Type="Int32" />
+          <Property Name="NameWard" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TypeOrder" Type="Int32" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="DisCount" Type="Boolean" />
+          <Property Name="DaySyn" Type="DateTime" Precision="3" />
+          <Property Name="ExportStoreDistributor" Type="Boolean" />
+          <Property Name="CreateOrderExport" Type="Boolean" />
+          <Property Name="LockInDbet" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblRFID">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DayReleased" Type="DateTime" Precision="3" />
+          <Property Name="DayExpired" Type="DateTime" Precision="3" />
+          <Property Name="UserReleased" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="DayCreate" Type="DateTime" Precision="3" />
+          <Property Name="DayUpdate" Type="DateTime" Precision="3" />
+          <Property Name="UserCreate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastEnter" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LogStoreOrderOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="Step" Type="Int32" />
+          <Property Name="InSystem" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblStoreOrderOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DriverName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NameDistributor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ItemId" Type="Double" />
+          <Property Name="NameProduct" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CatId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SumNumber" Type="Decimal" Precision="18" Scale="1" />
+          <Property Name="TimeIn33" Type="DateTime" Precision="3" />
+          <Property Name="CardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="DeliveryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryCodeParent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="TypeProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeIn21" Type="DateTime" Precision="3" />
+          <Property Name="TimeIn22" Type="DateTime" Precision="3" />
+          <Property Name="Confirm1" Type="Int32" />
+          <Property Name="TimeConfirm1" Type="DateTime" Precision="3" />
+          <Property Name="Confirm2" Type="Int32" />
+          <Property Name="TimeConfirm2" Type="DateTime" Precision="3" />
+          <Property Name="Confirm3" Type="Int32" />
+          <Property Name="TimeConfirm3" Type="DateTime" Precision="3" />
+          <Property Name="Confirm4" Type="Int32" />
+          <Property Name="TimeConfirm4" Type="DateTime" Precision="3" />
+          <Property Name="Confirm5" Type="Int32" />
+          <Property Name="TimeConfirm5" Type="DateTime" Precision="3" />
+          <Property Name="Confirm6" Type="Int32" />
+          <Property Name="TimeConfirm6" Type="DateTime" Precision="3" />
+          <Property Name="Confirm7" Type="Int32" />
+          <Property Name="TimeConfirm7" Type="DateTime" Precision="3" />
+          <Property Name="Confirm8" Type="Int32" />
+          <Property Name="TimeConfirm8" Type="DateTime" Precision="3" />
+          <Property Name="Step" Type="Int32" />
+          <Property Name="IndexOrder" Type="Int32" />
+          <Property Name="IndexOrder1" Type="Int32" />
+          <Property Name="IndexOrder2" Type="Int32" />
+          <Property Name="Trough" Type="Int32" />
+          <Property Name="Trough1" Type="Int32" />
+          <Property Name="NumberVoice" Type="Int32" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prioritize" Type="Int32" />
+          <Property Name="DayCreate" Type="DateTime" Precision="3" />
+          <Property Name="IDDistributorSyn" Type="Int32" />
+          <Property Name="Confirm9" Type="Int32" />
+          <Property Name="TimeConfirm9" Type="DateTime" Precision="3" />
+          <Property Name="Confirm9Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AreaId" Type="Int32" />
+          <Property Name="AreaName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CodeStore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameStore" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DriverUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DriverAccept" Type="DateTime" Precision="3" />
+          <Property Name="IndexOrderTemp" Type="Int32" />
+          <Property Name="WeightIn" Type="Int32" />
+          <Property Name="WeightOut" Type="Int32" />
+          <Property Name="NoteFinish" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Confirm9Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CountReindex" Type="Int32" />
+          <Property Name="IsVoiced" Type="Boolean" />
+          <Property Name="LocationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LockInDbet" Type="Boolean" />
+          <Property Name="LogJobAttach" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsSyncedByNewWS" Type="Boolean" />
+          <Property Name="WeightInTime" Type="DateTime" Precision="3" />
+          <Property Name="WeightOutTime" Type="DateTime" Precision="3" />
+          <Property Name="TroughLineCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsScaleAuto" Type="Boolean" />
+          <Property Name="TimeConfirmHistory" Type="DateTime" Precision="3" />
+          <Property Name="LogHistory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MoocCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LogProcessOrder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DriverPrintNumber" Type="Int32" />
+          <Property Name="DriverPrintTime" Type="DateTime" Precision="3" />
+          <Property Name="WarningNotCall" Type="Boolean" />
+          <Property Name="XiRoiAttatchmentFile" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PackageNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shifts" Type="Int32" />
+          <Property Name="AutoScaleOut" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblCallVehicleStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreOrderOperatingId" Type="Int32" Nullable="false" />
+          <Property Name="CountTry" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiledOn" Type="DateTime" Precision="3" />
+          <Property Name="LogCall" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsDone" Type="Boolean" />
+          <Property Name="TypeProduct" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblTrough">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProductId" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Width" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Long" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Working" Type="Boolean" />
+          <Property Name="Problem" Type="Boolean" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="ProductTypes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryCodeCurrent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PlanQuantityCurrent" Type="Double" />
+          <Property Name="CountQuantityCurrent" Type="Double" />
+          <Property Name="IsPicking" Type="Boolean" />
+          <Property Name="TransportNameCurrent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CheckInTimeCurrent" Type="DateTime" Precision="3" />
+          <Property Name="IsInviting" Type="Boolean" />
+          <Property Name="LineCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblVehicleVoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsCreatedVoice" Type="Boolean" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblScaleLogOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifieldOn" Type="DateTime" Precision="3" />
+          <Property Name="WeightScaleIn" Type="Double" />
+          <Property Name="WeightScaleOut" Type="Double" />
+          <Property Name="LoadWeightNull" Type="Double" />
+          <Property Name="LoadWeightFull" Type="Double" />
+          <Property Name="IsSynced" Type="Boolean" />
+          <Property Name="IsSentScaleIn" Type="Boolean" />
+          <Property Name="IsSentScaleOut" Type="Boolean" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDistributeScaleIn" Type="Boolean" />
+          <Property Name="IsDistributeScaleOut" Type="Boolean" />
+          <Property Name="TimeInScale" Type="DateTime" Precision="3" />
+          <Property Name="TimeOutScale" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblScaleOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScaleCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScaleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsScaling" Type="Boolean" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScaleIn" Type="Boolean" />
+          <Property Name="ScaleOut" Type="Boolean" />
+          <Property Name="ModifieldOn" Type="DateTime" Precision="3" />
+          <Property Name="TimeIn" Type="DateTime" Precision="3" />
+          <Property Name="TouchSensor" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblStoreOrderOperatingPriority">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TypeProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblVehicle">
+          <Key>
+            <PropertyRef Name="IDVehicle" />
+          </Key>
+          <Property Name="IDVehicle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDStore" Type="Int32" />
+          <Property Name="Vehicle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Tonnage" Type="Double" />
+          <Property Name="TonnageDefault" Type="Double" />
+          <Property Name="NameDriver" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IdCardNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HeightVehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WidthVehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LongVehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DayCreate" Type="DateTime" Precision="3" />
+          <Property Name="DayUpdate" Type="DateTime" Precision="3" />
+          <Property Name="UserCreate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserUpdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnladenWeight1" Type="Int32" />
+          <Property Name="UnladenWeight2" Type="Int32" />
+          <Property Name="UnladenWeight3" Type="Int32" />
+          <Property Name="IsSetMediumUnladenWeight" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tblConfigOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="Int32" />
+          <Property Name="ValueString" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblTroughOrderOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeliveryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="LogResponse" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblDeliveryCodeTroughOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeliveryCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSentTrough" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="TimeSendTrough" Type="DateTime" Precision="3" />
+          <Property Name="LogHistory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblDeliveryCodeTroughOnDemandOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeliveryCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSentTrough" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="TimeSendTrough" Type="DateTime" Precision="3" />
+          <Property Name="LogHistory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblDeviceOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupDevice" Type="Int32" />
+          <Property Name="GroupDeviceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GroupDeviceName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PortNumber" Type="Int32" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="DayCreate" Type="DateTime" Precision="3" />
+          <Property Name="LogHistory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblKCSOperating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="KCSCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LinkKCS" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Flag" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HMXuathangtudong_ModelStoreContainer" CdmEntityContainer="HMXuathangtudong_Entities">
+          <EntitySetMapping Name="tblDistributors">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblDistributor">
+              <MappingFragment StoreEntitySet="tblDistributor">
+                <ScalarProperty Name="LockInDbet" ColumnName="LockInDbet" />
+                <ScalarProperty Name="CreateOrderExport" ColumnName="CreateOrderExport" />
+                <ScalarProperty Name="ExportStoreDistributor" ColumnName="ExportStoreDistributor" />
+                <ScalarProperty Name="DaySyn" ColumnName="DaySyn" />
+                <ScalarProperty Name="DisCount" ColumnName="DisCount" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="TypeOrder" ColumnName="TypeOrder" />
+                <ScalarProperty Name="NameWard" ColumnName="NameWard" />
+                <ScalarProperty Name="IDWard" ColumnName="IDWard" />
+                <ScalarProperty Name="NameDistrict" ColumnName="NameDistrict" />
+                <ScalarProperty Name="IDDistrict" ColumnName="IDDistrict" />
+                <ScalarProperty Name="NameProvince" ColumnName="NameProvince" />
+                <ScalarProperty Name="IDProvince" ColumnName="IDProvince" />
+                <ScalarProperty Name="SMSDistributor" ColumnName="SMSDistributor" />
+                <ScalarProperty Name="EmailDistributor" ColumnName="EmailDistributor" />
+                <ScalarProperty Name="PhoneDistributor" ColumnName="PhoneDistributor" />
+                <ScalarProperty Name="AddressDistributor" ColumnName="AddressDistributor" />
+                <ScalarProperty Name="NameDistributor" ColumnName="NameDistributor" />
+                <ScalarProperty Name="CodeDistributor" ColumnName="CodeDistributor" />
+                <ScalarProperty Name="IDDistributorSyn" ColumnName="IDDistributorSyn" />
+                <ScalarProperty Name="CodeStore" ColumnName="CodeStore" />
+                <ScalarProperty Name="IDDistributor" ColumnName="IDDistributor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRFIDs">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblRFID">
+              <MappingFragment StoreEntitySet="tblRFID">
+                <ScalarProperty Name="LastEnter" ColumnName="LastEnter" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="DayUpdate" ColumnName="DayUpdate" />
+                <ScalarProperty Name="DayCreate" ColumnName="DayCreate" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="UserReleased" ColumnName="UserReleased" />
+                <ScalarProperty Name="DayExpired" ColumnName="DayExpired" />
+                <ScalarProperty Name="DayReleased" ColumnName="DayReleased" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogStoreOrderOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.LogStoreOrderOperating">
+              <MappingFragment StoreEntitySet="LogStoreOrderOperating">
+                <ScalarProperty Name="InSystem" ColumnName="InSystem" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStoreOrderOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblStoreOrderOperating">
+              <MappingFragment StoreEntitySet="tblStoreOrderOperating">
+                <ScalarProperty Name="AutoScaleOut" ColumnName="AutoScaleOut" />
+                <ScalarProperty Name="Shifts" ColumnName="Shifts" />
+                <ScalarProperty Name="PackageNumber" ColumnName="PackageNumber" />
+                <ScalarProperty Name="XiRoiAttatchmentFile" ColumnName="XiRoiAttatchmentFile" />
+                <ScalarProperty Name="WarningNotCall" ColumnName="WarningNotCall" />
+                <ScalarProperty Name="DriverPrintTime" ColumnName="DriverPrintTime" />
+                <ScalarProperty Name="DriverPrintNumber" ColumnName="DriverPrintNumber" />
+                <ScalarProperty Name="LogProcessOrder" ColumnName="LogProcessOrder" />
+                <ScalarProperty Name="MoocCode" ColumnName="MoocCode" />
+                <ScalarProperty Name="LogHistory" ColumnName="LogHistory" />
+                <ScalarProperty Name="TimeConfirmHistory" ColumnName="TimeConfirmHistory" />
+                <ScalarProperty Name="IsScaleAuto" ColumnName="IsScaleAuto" />
+                <ScalarProperty Name="TroughLineCode" ColumnName="TroughLineCode" />
+                <ScalarProperty Name="WeightOutTime" ColumnName="WeightOutTime" />
+                <ScalarProperty Name="WeightInTime" ColumnName="WeightInTime" />
+                <ScalarProperty Name="IsSyncedByNewWS" ColumnName="IsSyncedByNewWS" />
+                <ScalarProperty Name="LogJobAttach" ColumnName="LogJobAttach" />
+                <ScalarProperty Name="LockInDbet" ColumnName="LockInDbet" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="IsVoiced" ColumnName="IsVoiced" />
+                <ScalarProperty Name="CountReindex" ColumnName="CountReindex" />
+                <ScalarProperty Name="Confirm9Image" ColumnName="Confirm9Image" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="NoteFinish" ColumnName="NoteFinish" />
+                <ScalarProperty Name="WeightOut" ColumnName="WeightOut" />
+                <ScalarProperty Name="WeightIn" ColumnName="WeightIn" />
+                <ScalarProperty Name="IndexOrderTemp" ColumnName="IndexOrderTemp" />
+                <ScalarProperty Name="DriverAccept" ColumnName="DriverAccept" />
+                <ScalarProperty Name="DriverUserName" ColumnName="DriverUserName" />
+                <ScalarProperty Name="NameStore" ColumnName="NameStore" />
+                <ScalarProperty Name="CodeStore" ColumnName="CodeStore" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Confirm9Note" ColumnName="Confirm9Note" />
+                <ScalarProperty Name="TimeConfirm9" ColumnName="TimeConfirm9" />
+                <ScalarProperty Name="Confirm9" ColumnName="Confirm9" />
+                <ScalarProperty Name="IDDistributorSyn" ColumnName="IDDistributorSyn" />
+                <ScalarProperty Name="DayCreate" ColumnName="DayCreate" />
+                <ScalarProperty Name="Prioritize" ColumnName="Prioritize" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="NumberVoice" ColumnName="NumberVoice" />
+                <ScalarProperty Name="Trough1" ColumnName="Trough1" />
+                <ScalarProperty Name="Trough" ColumnName="Trough" />
+                <ScalarProperty Name="IndexOrder2" ColumnName="IndexOrder2" />
+                <ScalarProperty Name="IndexOrder1" ColumnName="IndexOrder1" />
+                <ScalarProperty Name="IndexOrder" ColumnName="IndexOrder" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+                <ScalarProperty Name="TimeConfirm8" ColumnName="TimeConfirm8" />
+                <ScalarProperty Name="Confirm8" ColumnName="Confirm8" />
+                <ScalarProperty Name="TimeConfirm7" ColumnName="TimeConfirm7" />
+                <ScalarProperty Name="Confirm7" ColumnName="Confirm7" />
+                <ScalarProperty Name="TimeConfirm6" ColumnName="TimeConfirm6" />
+                <ScalarProperty Name="Confirm6" ColumnName="Confirm6" />
+                <ScalarProperty Name="TimeConfirm5" ColumnName="TimeConfirm5" />
+                <ScalarProperty Name="Confirm5" ColumnName="Confirm5" />
+                <ScalarProperty Name="TimeConfirm4" ColumnName="TimeConfirm4" />
+                <ScalarProperty Name="Confirm4" ColumnName="Confirm4" />
+                <ScalarProperty Name="TimeConfirm3" ColumnName="TimeConfirm3" />
+                <ScalarProperty Name="Confirm3" ColumnName="Confirm3" />
+                <ScalarProperty Name="TimeConfirm2" ColumnName="TimeConfirm2" />
+                <ScalarProperty Name="Confirm2" ColumnName="Confirm2" />
+                <ScalarProperty Name="TimeConfirm1" ColumnName="TimeConfirm1" />
+                <ScalarProperty Name="Confirm1" ColumnName="Confirm1" />
+                <ScalarProperty Name="TimeIn22" ColumnName="TimeIn22" />
+                <ScalarProperty Name="TimeIn21" ColumnName="TimeIn21" />
+                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="DeliveryCodeParent" ColumnName="DeliveryCodeParent" />
+                <ScalarProperty Name="DeliveryCode" ColumnName="DeliveryCode" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="TimeIn33" ColumnName="TimeIn33" />
+                <ScalarProperty Name="SumNumber" ColumnName="SumNumber" />
+                <ScalarProperty Name="CatId" ColumnName="CatId" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="NameDistributor" ColumnName="NameDistributor" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCallVehicleStatus">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblCallVehicleStatu">
+              <MappingFragment StoreEntitySet="tblCallVehicleStatus">
+                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+                <ScalarProperty Name="IsDone" ColumnName="IsDone" />
+                <ScalarProperty Name="LogCall" ColumnName="LogCall" />
+                <ScalarProperty Name="ModifiledOn" ColumnName="ModifiledOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CountTry" ColumnName="CountTry" />
+                <ScalarProperty Name="StoreOrderOperatingId" ColumnName="StoreOrderOperatingId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTroughs">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblTrough">
+              <MappingFragment StoreEntitySet="tblTrough">
+                <ScalarProperty Name="LineCode" ColumnName="LineCode" />
+                <ScalarProperty Name="IsInviting" ColumnName="IsInviting" />
+                <ScalarProperty Name="CheckInTimeCurrent" ColumnName="CheckInTimeCurrent" />
+                <ScalarProperty Name="TransportNameCurrent" ColumnName="TransportNameCurrent" />
+                <ScalarProperty Name="IsPicking" ColumnName="IsPicking" />
+                <ScalarProperty Name="CountQuantityCurrent" ColumnName="CountQuantityCurrent" />
+                <ScalarProperty Name="PlanQuantityCurrent" ColumnName="PlanQuantityCurrent" />
+                <ScalarProperty Name="DeliveryCodeCurrent" ColumnName="DeliveryCodeCurrent" />
+                <ScalarProperty Name="ProductTypes" ColumnName="ProductTypes" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="Working" ColumnName="Working" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVehicleVoices">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblVehicleVoice">
+              <MappingFragment StoreEntitySet="tblVehicleVoice">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="IsCreatedVoice" ColumnName="IsCreatedVoice" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblScaleLogOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblScaleLogOperating">
+              <MappingFragment StoreEntitySet="tblScaleLogOperating">
+                <ScalarProperty Name="TimeOutScale" ColumnName="TimeOutScale" />
+                <ScalarProperty Name="TimeInScale" ColumnName="TimeInScale" />
+                <ScalarProperty Name="IsDistributeScaleOut" ColumnName="IsDistributeScaleOut" />
+                <ScalarProperty Name="IsDistributeScaleIn" ColumnName="IsDistributeScaleIn" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IsSentScaleOut" ColumnName="IsSentScaleOut" />
+                <ScalarProperty Name="IsSentScaleIn" ColumnName="IsSentScaleIn" />
+                <ScalarProperty Name="IsSynced" ColumnName="IsSynced" />
+                <ScalarProperty Name="LoadWeightFull" ColumnName="LoadWeightFull" />
+                <ScalarProperty Name="LoadWeightNull" ColumnName="LoadWeightNull" />
+                <ScalarProperty Name="WeightScaleOut" ColumnName="WeightScaleOut" />
+                <ScalarProperty Name="WeightScaleIn" ColumnName="WeightScaleIn" />
+                <ScalarProperty Name="ModifieldOn" ColumnName="ModifieldOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DeliveryCode" ColumnName="DeliveryCode" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblScaleOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblScaleOperating">
+              <MappingFragment StoreEntitySet="tblScaleOperating">
+                <ScalarProperty Name="TouchSensor" ColumnName="TouchSensor" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="ModifieldOn" ColumnName="ModifieldOn" />
+                <ScalarProperty Name="ScaleOut" ColumnName="ScaleOut" />
+                <ScalarProperty Name="ScaleIn" ColumnName="ScaleIn" />
+                <ScalarProperty Name="DeliveryCode" ColumnName="DeliveryCode" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="IsScaling" ColumnName="IsScaling" />
+                <ScalarProperty Name="ScaleName" ColumnName="ScaleName" />
+                <ScalarProperty Name="ScaleCode" ColumnName="ScaleCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStoreOrderOperatingPriorities">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblStoreOrderOperatingPriority">
+              <MappingFragment StoreEntitySet="tblStoreOrderOperatingPriority">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVehicles">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblVehicle">
+              <MappingFragment StoreEntitySet="tblVehicle">
+                <ScalarProperty Name="IsSetMediumUnladenWeight" ColumnName="IsSetMediumUnladenWeight" />
+                <ScalarProperty Name="UnladenWeight3" ColumnName="UnladenWeight3" />
+                <ScalarProperty Name="UnladenWeight2" ColumnName="UnladenWeight2" />
+                <ScalarProperty Name="UnladenWeight1" ColumnName="UnladenWeight1" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="DayUpdate" ColumnName="DayUpdate" />
+                <ScalarProperty Name="DayCreate" ColumnName="DayCreate" />
+                <ScalarProperty Name="LongVehicle" ColumnName="LongVehicle" />
+                <ScalarProperty Name="WidthVehicle" ColumnName="WidthVehicle" />
+                <ScalarProperty Name="HeightVehicle" ColumnName="HeightVehicle" />
+                <ScalarProperty Name="IdCardNumber" ColumnName="IdCardNumber" />
+                <ScalarProperty Name="NameDriver" ColumnName="NameDriver" />
+                <ScalarProperty Name="TonnageDefault" ColumnName="TonnageDefault" />
+                <ScalarProperty Name="Tonnage" ColumnName="Tonnage" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="IDStore" ColumnName="IDStore" />
+                <ScalarProperty Name="IDVehicle" ColumnName="IDVehicle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblConfigOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblConfigOperating">
+              <MappingFragment StoreEntitySet="tblConfigOperating">
+                <ScalarProperty Name="ValueString" ColumnName="ValueString" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTroughOrderOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblTroughOrderOperating">
+              <MappingFragment StoreEntitySet="tblTroughOrderOperating">
+                <ScalarProperty Name="LogResponse" ColumnName="LogResponse" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="DeliveryCode" ColumnName="DeliveryCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDeliveryCodeTroughOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblDeliveryCodeTroughOperating">
+              <MappingFragment StoreEntitySet="tblDeliveryCodeTroughOperating">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="LogHistory" ColumnName="LogHistory" />
+                <ScalarProperty Name="TimeSendTrough" ColumnName="TimeSendTrough" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsSentTrough" ColumnName="IsSentTrough" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="DeliveryCode" ColumnName="DeliveryCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDeliveryCodeTroughOnDemandOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblDeliveryCodeTroughOnDemandOperating">
+              <MappingFragment StoreEntitySet="tblDeliveryCodeTroughOnDemandOperating">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="LogHistory" ColumnName="LogHistory" />
+                <ScalarProperty Name="TimeSendTrough" ColumnName="TimeSendTrough" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsSentTrough" ColumnName="IsSentTrough" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="DeliveryCode" ColumnName="DeliveryCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDeviceOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblDeviceOperating">
+              <MappingFragment StoreEntitySet="tblDeviceOperating">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="LogHistory" ColumnName="LogHistory" />
+                <ScalarProperty Name="DayCreate" ColumnName="DayCreate" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PortNumber" ColumnName="PortNumber" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="GroupDeviceName" ColumnName="GroupDeviceName" />
+                <ScalarProperty Name="GroupDeviceCode" ColumnName="GroupDeviceCode" />
+                <ScalarProperty Name="GroupDevice" ColumnName="GroupDevice" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblKCSOperatings">
+            <EntityTypeMapping TypeName="HMXuathangtudong_Model.tblKCSOperating">
+              <MappingFragment StoreEntitySet="tblKCSOperating">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="LinkKCS" ColumnName="LinkKCS" />
+                <ScalarProperty Name="KCSCode" ColumnName="KCSCode" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

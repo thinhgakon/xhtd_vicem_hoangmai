@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Phongkarate - Nguyen Cong Trung</title>
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Landing page template for creative dashboard">
+    <meta name="keywords" content="Landing page template">
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets\logos\favicon.ico" type="image/png" sizes="16x16">
+    <!-- Bootstrap -->
+    <link href="assets\css\bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,700,600" rel="stylesheet" type="text/css">
+
+	
+	<script type="text/javascript" src="assets\js\jquery-2.1.1.js"></script>
+	<style>
+    .blink_me {
+        animation: flash 2s linear infinite;
+    }
+    .vehicle {
+        text-align: left;
+        padding-left: 50px;
+    }
+    .status {
+        text-align: right;
+        padding-right: 50px;
+    }
+   @-webkit-keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+</style>
+</head>
+
+<body style="padding: unset;padding: unset;background-color: blue;">
+
+    <div id="container" class="container-fluid">
+        <div style=" text-align: center; vertical-align: middle; color: white; font-size: 120px; padding-top: 100px; font-weight: 700;line-height: 180px;">  
+        <div>VICEM HOÀNG MAI</div>   
+        <div>HỆ THỐNG</div>      
+        <div>XUẤT HÀNG TỰ ĐỘNG</div> 
+        </div>
+    </div>
+
+
+<script src="assets\js\jquery.signalR-2.4.1.min.js"></script>
+    <!-- Jquery and Js Plugins -->
+    
+    <script type="text/javascript" src="assets\js\bootstrap.min.js"></script>
+	<script>
+    $(document).ready(function () {
+
+			var connection = $.hubConnection('http://192.168.0.10:8091/signalr');
+			$.connection.hub.url = 'http://192.168.0.10:8091/signalr';
+			var contosoChatHubProxy = connection.createHubProxy('MyHub');
+			contosoChatHubProxy.on('SendMessage', function(name, message) {
+				console.log(name+ '   :  ' + message);
+				if(name == 'xhtd_web'){
+				ProcessData(message);
+				}
+			});
+			connection.start().done(function() {
+				$('#newContosoChatMessage').click(function () {
+					contosoChatHubProxy.invoke('SendScaleInfo1', '======phong===', '====== data===');
+					console.log('đã gửi');
+							});
+				});
+			
+    })
+	function ProcessData(data){
+	var model = JSON.parse(data);
+			if(model.length == 0)
+            {
+                let htmlString = '<div style=" text-align: center; vertical-align: middle; color: white; font-size: 120px; padding-top: 100px; font-weight: 700;line-height: 180px;">        <div>VICEM HOÀNG MAI</div>        <div>HỆ THỐNG</div>        <div>XUẤT HÀNG TỰ ĐỘNG</div>    </div>';
+                $("#container").html(htmlString);
+			}else{
+                let htmlString = '<div style=" padding-top: 50px; font-size: 65px; text-align: center; vertical-align: middle; color: white; font-weight: 700;">        <div class="row">            <div class="col-md-6" style="text-align:left">BIỂN SỐ XE</div>            <div class="col-md-6" style=" text-align: right; padding-right: 140px;">TRẠNG THÁI</div>        </div>';
+
+                for (var i = 0; i < model.length; i++) {
+                    htmlString += '<div class="row" style="padding-top:20px;">';
+                    if (model[i].State1.toUpperCase() == 'MỜI XE VÀO') {
+                        htmlString += '<div class="col-md-6 vehicle" style="color: #ff0a0a;">' + model[i].Vehicle + '</div>            <div class="col-md-6 blink_me status" style="color: #ff0a0a;padding-right: 150px;">' + model[i].State1.toUpperCase() +'</div>';
+                    } else {
+                        htmlString += '<div class="col-md-6 vehicle">' + model[i].Vehicle + '</div>            <div class="col-md-6 status" style="padding-right: 120px;">' + model[i].State1.toUpperCase() + '</div>';
+                    }
+                    htmlString += '</div>';
+                }
+                htmlString += ' </div>';
+                $("#container").html(htmlString);
+			}
+		}
+</script>
+</body>
+
+</html>

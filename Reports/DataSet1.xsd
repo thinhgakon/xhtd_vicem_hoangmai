@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TableTaskRelease" msprop:Generator_TableClassName="TableTaskReleaseDataTable" msprop:Generator_TableVarName="tableTableTaskRelease" msprop:Generator_TablePropName="TableTaskRelease" msprop:Generator_RowDeletingName="TableTaskReleaseRowDeleting" msprop:Generator_RowChangingName="TableTaskReleaseRowChanging" msprop:Generator_RowEvHandlerName="TableTaskReleaseRowChangeEventHandler" msprop:Generator_RowDeletedName="TableTaskReleaseRowDeleted" msprop:Generator_UserTableName="TableTaskRelease" msprop:Generator_RowChangedName="TableTaskReleaseRowChanged" msprop:Generator_RowEvArgName="TableTaskReleaseRowChangeEvent" msprop:Generator_RowClassName="TableTaskReleaseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TimeConfirm7" msprop:Generator_ColumnVarNameInTable="columnTimeConfirm7" msprop:Generator_ColumnPropNameInRow="TimeConfirm7" msprop:Generator_ColumnPropNameInTable="TimeConfirm7Column" msprop:Generator_UserColumnName="TimeConfirm7" type="xs:string" minOccurs="0" />
+              <xs:element name="DeliveryCode" msprop:Generator_ColumnVarNameInTable="columnDeliveryCode" msprop:Generator_ColumnPropNameInRow="DeliveryCode" msprop:Generator_ColumnPropNameInTable="DeliveryCodeColumn" msprop:Generator_UserColumnName="DeliveryCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Vehicle" msprop:Generator_ColumnVarNameInTable="columnVehicle" msprop:Generator_ColumnPropNameInRow="Vehicle" msprop:Generator_ColumnPropNameInTable="VehicleColumn" msprop:Generator_UserColumnName="Vehicle" type="xs:string" minOccurs="0" />
+              <xs:element name="DriverName" msprop:Generator_ColumnVarNameInTable="columnDriverName" msprop:Generator_ColumnPropNameInRow="DriverName" msprop:Generator_ColumnPropNameInTable="DriverNameColumn" msprop:Generator_UserColumnName="DriverName" type="xs:string" minOccurs="0" />
+              <xs:element name="NameDistributor" msprop:Generator_ColumnVarNameInTable="columnNameDistributor" msprop:Generator_ColumnPropNameInRow="NameDistributor" msprop:Generator_ColumnPropNameInTable="NameDistributorColumn" msprop:Generator_UserColumnName="NameDistributor" type="xs:string" minOccurs="0" />
+              <xs:element name="NameProduct" msprop:Generator_ColumnVarNameInTable="columnNameProduct" msprop:Generator_ColumnPropNameInRow="NameProduct" msprop:Generator_ColumnPropNameInTable="NameProductColumn" msprop:Generator_UserColumnName="NameProduct" type="xs:string" minOccurs="0" />
+              <xs:element name="SumNumber" msprop:Generator_ColumnVarNameInTable="columnSumNumber" msprop:Generator_ColumnPropNameInRow="SumNumber" msprop:Generator_ColumnPropNameInTable="SumNumberColumn" msprop:Generator_UserColumnName="SumNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="Trough" msprop:Generator_ColumnVarNameInTable="columnTrough" msprop:Generator_ColumnPropNameInRow="Trough" msprop:Generator_ColumnPropNameInTable="TroughColumn" msprop:Generator_UserColumnName="Trough" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

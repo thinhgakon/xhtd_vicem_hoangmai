@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section metatags
+{
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+}
+
+@using HMXHTD.Data.DataEntity;
+@model List<tblStoreOrderOperating>
+<style>
+    .card-item {
+        width: 75rem;
+    }
+
+    .card-container {
+        margin: 0 auto;
+        width: max-content;
+        background-color: lightgray;
+        padding: 5px 15px;
+    }
+
+    .card-header {
+        background-color: #885d5d;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .control-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .list-group-item .toggle {
+        width: 200px !important;
+    }
+</style>
+
+
+<div class="card-container">
+
+    <!-- 1. Đoạn cần thêm -->
+    <form action="/History/Index" method="get" id="form_filter">
+        <div class="row">
+
+            <div class="form-group col-md-8" style="display: flex;">
+                <div class="input-icon right">
+                    <i class="icon-magnifier"></i>
+                    <input type="text" class="form-control" id="keyword" name="keyword" title="nhập biển số xe" value="@ViewBag.Keyword" placeholder="Tìm kiếm...">
+                </div>
+                <select class="form-control" id="trang_thai" name="step">
+                    <option value="-1" selected>Tất cả</option>
+                    <option value="0">Chưa xác thực</option>
+                    <option value="1">Đã xác thực</option>
+                    <option value="2">Đã vào cổng</option>
+                    <option value="3">Đã cân vào</option>
+                    <option value="4">Đang mời vào</option>
+                    <option value="5">Đang lấy hàng</option>
+                    <option value="6">Đã lấy hàng</option>
+                    <option value="7">Đã cân ra</option>
+                    <option value="8">Đã ra cổng</option>
+                    <option value="9">Đã kết thúc</option>
+                </select>
+                <br />
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                </span>
+            </div>
+
+
+
+        </div>
+
+
+
+    </form>
+    <div class="card card-item" style="margin-bottom: 15px;">
+        <div class="card-header" style="background-color: red">
+            @ViewBag.Count Đơn hàng -:- @ViewBag.CountVehicleLed Xe trước bãi led  -:- @ViewBag.CountVehicleInGate xe trong bãi máng
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="card card-item">
+            <div class="card-header">
+                @item.Vehicle  --- @item.CardNo  -- @item.DriverUserName
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Tài xế: @item.DriverUserName -- Nhận đơn lúc: @item.TimeConfirm1 -- Số lốt: @item.IndexOrder -- Step : @item.Step</li>
+                <li class="list-group-item">Vào bãi lúc: @item.TimeConfirm1 -- vào cổng lúc: @item.TimeConfirm2</li>
+                <li class="list-group-item">MSGH: @item.DeliveryCode -- @item.TypeProduct -- @item.SumNumber tấn </li>
+                <li class="list-group-item">
+                    <button class="btn btn-block" onclick="ShowHistoryCall(@item.Id)">ShowHistoryCall</button>
+                    <div id="history_call_@item.Id"></div>
+                </li>
+            </ul>
+        </div>
+    }
+
+</div>
+@*@ViewBag.IsCall*@
+<script>
+    $(document).ready(function () {
+        $('#trang_thai option')
+            .removeAttr('selected')
+            .filter('[value="@ViewBag.Step"]')
+            .attr('selected', true);
+        if (1==2) {
+            $('#check_is_call').prop('checked', true).change();
+        } else {
+            $('#check_is_call').prop('unchecked', true).change();
+        }
+
+        $("#check_is_call").on('change', function () {
+            if ($(this).is(':checked')) {
+                switchStatus = $(this).is(':checked');
+                saveConfigIsCall(true)
+            }
+            else {
+                switchStatus = $(this).is(':checked');
+                saveConfigIsCall(false);
+            }
+        });
+    });
+    function ShowHistoryCall(id) {
+        $.ajax({
+            type: "GET",
+            url: "/History/GetHistoryCall?id=" + id,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                $("#history_call_" + id).html(response);
+            },
+            failure: function (response) {
+                toastr.success(response);
+            },
+            error: function (response) {
+                toastr.success(response);
+            }
+        });
+    }
+
+</script>
