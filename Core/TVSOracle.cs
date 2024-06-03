@@ -19,7 +19,7 @@ namespace HMXHTD
         #region declare objects
         private clsConfigXML objConfig = new clsConfigXML();
         public string oracleConnectionString = "", oracleConnectionString1 = "", sqlConnectionString = "";
-        public static string SQL_Con = "Server = '192.168.158.19\\XHTD'; Uid = 'hmxhtd'; pwd = 'bh123!@#'; Database = 'QLBanhang_Test'", ORC_Con, API = "http://upwebsale.ximanghoangmai.vn:5555";
+        public static string SQL_Con = "Server = '192.168.158.17'; Uid = 'sa'; pwd = 'Hmc@12345'; Database = 'DEV_XHTD'", ORC_Con, API = "http://upwebsale.ximanghoangmai.vn:5555";
         #endregion
 
         #region method TVSOracle
@@ -31,7 +31,7 @@ namespace HMXHTD
             string sqlPwd = objConfig.GetKey("Pwd");
             this.sqlConnectionString = "Server = " + sqlServer + ";DataBase = " + sqlDataBase + ";Uid = " + sqlUid + "; Pwd = " + sqlPwd;
 
-            TVSOracle.SQL_Con = "Server = '192.168.158.19\\XHTD'; Uid = 'hmxhtd'; pwd = 'bh123!@#'; Database = 'QLBanhang_Test'";//this.sqlConnectionString;
+            TVSOracle.SQL_Con = "Server = '192.168.158.17'; Uid = 'sa'; pwd = 'Hmc@12345'; Database = 'DEV_XHTD'";//this.sqlConnectionString;
            // TVSOracle.SQL_Con = "Server = '192.168.0.12'; Uid = 'sa'; pwd = 'hmc@123'; Database = 'QLBanhang_Test'"; //db dev
 
             string sqlServer_O = objConfig.GetKey("Server_O");
