@@ -508,6 +508,17 @@ namespace HMXHTD
             objfrmDriverVoucher.Show();
         }
 
+        private void mnuExportPlan_Click(object sender, EventArgs e)
+        {
+            this.clearControl(this.MainSplitContainer1, "objF1");
+            frmExportPlan objExportPlan = new frmExportPlan();
+            objExportPlan.TopLevel = false;
+            objExportPlan.Dock = DockStyle.Fill;
+            this.MainSplitContainer1.Panel1.Controls.Add(objExportPlan);
+            this.Text = "VICEM HOANG MAI - KẾ HOẠCH XUẤT HÀNG";
+            objExportPlan.Show();
+        }
+
         private void mnuCheckUpdate_Click(object sender, EventArgs e)
         {
             UpdateCheckInfo info = null;

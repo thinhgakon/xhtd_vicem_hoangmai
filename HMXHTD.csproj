@@ -272,6 +272,7 @@
     <Compile Include="BarrierLib\BarrierScaleLib.cs" />
     <Compile Include="clsConfigXML.cs" />
     <Compile Include="Core\Account.cs" />
+    <Compile Include="Core\ExportPlan.cs" />
     <Compile Include="Core\FileKCS.cs" />
     <Compile Include="Core\BillOrder.cs" />
     <Compile Include="Core\BillOrderEntity.cs" />
@@ -383,6 +384,12 @@
     </Compile>
     <Compile Include="frmDriverVoucherReport.Designer.cs">
       <DependentUpon>frmDriverVoucherReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportPlan.Designer.cs">
+      <DependentUpon>frmExportPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIntro.cs">
       <SubType>Form</SubType>
@@ -680,6 +687,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDriverVoucherReport.resx">
       <DependentUpon>frmDriverVoucherReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportPlan.resx">
+      <DependentUpon>frmExportPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIntro.resx">
       <DependentUpon>frmIntro.cs</DependentUpon>

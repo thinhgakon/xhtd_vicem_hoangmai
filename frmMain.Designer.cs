@@ -53,6 +53,8 @@
             this.mnuTaskRelease = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaskRelease2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuExportPlan = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuTaskDbet = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTaskVehiceInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -112,26 +114,26 @@
             // mnuAccount
             // 
             this.mnuAccount.Name = "mnuAccount";
-            this.mnuAccount.Size = new System.Drawing.Size(180, 22);
+            this.mnuAccount.Size = new System.Drawing.Size(178, 22);
             this.mnuAccount.Text = "Thông tin tài khoản";
             this.mnuAccount.Click += new System.EventHandler(this.mnuAccount_Click);
             // 
             // mnuConfig
             // 
             this.mnuConfig.Name = "mnuConfig";
-            this.mnuConfig.Size = new System.Drawing.Size(180, 22);
+            this.mnuConfig.Size = new System.Drawing.Size(178, 22);
             this.mnuConfig.Text = "Cấu hình";
             this.mnuConfig.Click += new System.EventHandler(this.mnuConfig_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuExit.Size = new System.Drawing.Size(178, 22);
             this.mnuExit.Text = "Thoát";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -230,6 +232,8 @@
             this.mnuTaskRelease,
             this.mnuTaskRelease2,
             this.toolStripSeparator4,
+            this.mnuExportPlan,
+            this.toolStripSeparator9,
             this.mnuTaskDbet,
             this.mnuTaskVehiceInfo,
             this.toolStripSeparator7,
@@ -292,6 +296,18 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(204, 6);
+            // 
+            // mnuExportPlan
+            // 
+            this.mnuExportPlan.Name = "mnuExportPlan";
+            this.mnuExportPlan.Size = new System.Drawing.Size(207, 22);
+            this.mnuExportPlan.Text = "Kế hoạch xuất hàng";
+            this.mnuExportPlan.Click += new System.EventHandler(this.mnuExportPlan_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(204, 6);
             // 
             // mnuTaskDbet
             // 
@@ -554,6 +570,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem mnuNotification;
         private System.Windows.Forms.ToolStripMenuItem mnuCheckUpdate;
+        private System.Windows.Forms.ToolStripMenuItem mnuExportPlan;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     }
 }
 
